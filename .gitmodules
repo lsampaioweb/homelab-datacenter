@@ -1,6 +1,6 @@
-[submodule "01-Jump-Server"]
-	path = 01-Jump-Server
+[submodule "jump_server"]
+	path = jump_server
 	url = https://github.com/lsampaioweb/jump-server.git
-[submodule "02-Proxmox-Cluster"]
-	path = 02-Proxmox-Cluster
+[submodule "proxmox_cluster"]
+	path = proxmox_cluster
 	url = https://github.com/lsampaioweb/proxmox-cluster.git
