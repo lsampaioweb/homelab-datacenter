@@ -10,3 +10,6 @@
 [submodule "T1600G-28TS-SG2424"]
 	path = T1600G-28TS-SG2424
 	url = https://github.com/lsampaioweb/T1600G-28TS-SG2424.git
+[submodule "openssl-certificates"]
+	path = openssl-certificates
+	url = https://github.com/lsampaioweb/openssl-certificates.git
