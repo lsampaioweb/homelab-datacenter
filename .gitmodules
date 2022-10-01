@@ -7,3 +7,6 @@
 [submodule "tplink_router_ax1800"]
 	path = tplink_router_ax1800
 	url = https://github.com/lsampaioweb/tplink_router_ax1800.git
+[submodule "T1600G-28TS-SG2424"]
+	path = T1600G-28TS-SG2424
+	url = https://github.com/lsampaioweb/T1600G-28TS-SG2424.git
