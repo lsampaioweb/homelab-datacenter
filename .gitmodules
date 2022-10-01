@@ -4,3 +4,6 @@
 [submodule "proxmox_cluster"]
 	path = proxmox_cluster
 	url = https://github.com/lsampaioweb/proxmox-cluster.git
+[submodule "tplink_router_ax1800"]
+	path = tplink_router_ax1800
+	url = https://github.com/lsampaioweb/tplink_router_ax1800.git
