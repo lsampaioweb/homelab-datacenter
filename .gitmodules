@@ -13,3 +13,9 @@
 [submodule "openssl-certificates"]
 	path = openssl_certificates
 	url = https://github.com/lsampaioweb/openssl-certificates.git
+[submodule "packer-proxmox-ubuntu-22-04-server-raw"]
+	path = packer-proxmox-ubuntu-22-04-server-raw
+	url = https://github.com/lsampaioweb/packer-proxmox-ubuntu-22-04-server-raw.git
+[submodule "packer-proxmox-ubuntu-22-04-server-standard"]
+	path = packer-proxmox-ubuntu-22-04-server-standard
+	url = https://github.com/lsampaioweb/packer-proxmox-ubuntu-22-04-server-standard.git
