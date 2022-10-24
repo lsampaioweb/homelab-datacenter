@@ -8,8 +8,8 @@ Repository with all the scripts of my HomeLab.
 1. [Switch - T1600G-28TS-SG2424](https://github.com/lsampaioweb/T1600G-28TS-SG2424) - Repository with scripts to interact with the TP-LINK Switch SFP T1600G-28TS-SG2424.
 1. [KVM - Proxmox-Cluster](https://github.com/lsampaioweb/proxmox-cluster) - Repository with scripts to setup a Proxmox Cluster.
 
-1. [Ubuntu Server 22.04 Raw](https://github.com/lsampaioweb/packer-proxmox-ubuntu-22-04-server-raw) - Repository with scripts to create an Ubuntu server template.
-1. [Ubuntu Server 22.04 Standard](https://github.com/lsampaioweb/packer-proxmox-ubuntu-22-04-server-standard) - Repository with scripts to create an Ubuntu server template.
+1. [Ubuntu Server 22.04 Raw](https://github.com/lsampaioweb/proxmox-ubuntu-22-04-server-raw) - Repository with scripts to create an Ubuntu server template.
+1. [Ubuntu Server 22.04 Standard](https://github.com/lsampaioweb/proxmox-ubuntu-22-04-server-standard) - Repository with scripts to create an Ubuntu server template.
 1. [Ubuntu Desktop Workstation 22.04]() - Repository with scripts to create my Ubuntu Desktop WorkStation.
 
 # License:
