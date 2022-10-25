@@ -10,7 +10,8 @@ Repository with all the scripts of my HomeLab.
 
 1. [Ubuntu Server 22.04 Raw](https://github.com/lsampaioweb/proxmox-ubuntu-22-04-server-raw) - Repository with scripts to create an Ubuntu server template.
 1. [Ubuntu Server 22.04 Standard](https://github.com/lsampaioweb/proxmox-ubuntu-22-04-server-standard) - Repository with scripts to create an Ubuntu server template.
-1. [Ubuntu Desktop Workstation 22.04]() - Repository with scripts to create my Ubuntu Desktop WorkStation.
+1. [Ubuntu Desktop 22.04 Raw](https://github.com/lsampaioweb/proxmox-ubuntu-22-04-desktop-raw) - Repository with scripts to create my Ubuntu Desktop WorkStation.
+1. [Ubuntu Desktop 22.04 Standard](https://github.com/lsampaioweb/proxmox-ubuntu-22-04-desktop-standard) - Repository with scripts to create my Ubuntu Desktop WorkStation.
 
 # License:
 
