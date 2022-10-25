@@ -19,3 +19,6 @@
 [submodule "proxmox-ubuntu-22-04-server-standard"]
 	path = proxmox-ubuntu-22-04-server-standard
 	url = https://github.com/lsampaioweb/proxmox-ubuntu-22-04-server-standard.git
+[submodule "proxmox-ubuntu-22-04-desktop-raw"]
+	path = proxmox-ubuntu-22-04-desktop-raw
+	url = https://github.com/lsampaioweb/proxmox-ubuntu-22-04-desktop-raw.git
