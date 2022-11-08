@@ -28,3 +28,6 @@
 [submodule "terraform-proxmox-ubuntu-22-04-module"]
 	path = terraform-proxmox-ubuntu-22-04-module
 	url = https://github.com/lsampaioweb/terraform-proxmox-ubuntu-22-04-module.git
+[submodule "packer-proxmox-ubuntu-22-04-iso"]
+	path = packer-proxmox-ubuntu-22-04-iso
+	url = https://github.com/lsampaioweb/packer-proxmox-ubuntu-22-04-iso.git
