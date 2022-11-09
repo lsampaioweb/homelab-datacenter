@@ -31,3 +31,6 @@
 [submodule "packer-proxmox-ubuntu-22-04-iso"]
 	path = packer-proxmox-ubuntu-22-04-iso
 	url = https://github.com/lsampaioweb/packer-proxmox-ubuntu-22-04-iso.git
+[submodule "packer-proxmox-ubuntu-22-04-clone"]
+	path = packer-proxmox-ubuntu-22-04-clone
+	url = https://github.com/lsampaioweb/packer-proxmox-ubuntu-22-04-clone.git
