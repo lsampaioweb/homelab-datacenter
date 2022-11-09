@@ -13,6 +13,9 @@ Repository with all the scripts of my HomeLab.
 1. [Ubuntu Desktop 22.04 Raw](https://github.com/lsampaioweb/proxmox-ubuntu-22-04-desktop-raw) - Repository with scripts to create my Ubuntu Desktop WorkStation.
 1. [Ubuntu Desktop 22.04 Standard](https://github.com/lsampaioweb/proxmox-ubuntu-22-04-desktop-standard) - Repository with scripts to create my Ubuntu Desktop WorkStation.
 
+1. [Packer Proxmox Ubuntu 22.04 Iso](https://github.com/lsampaioweb/packer-proxmox-ubuntu-22-04-iso) - Repository of a Packer module to create an Ubuntu 22.04 virtual machine (server or desktop) on Proxmox VE from an ISO file.
+1. [Packer Proxmox Ubuntu 22.04 Clone](https://github.com/lsampaioweb/packer-proxmox-ubuntu-22-04-clone) - Repository of a Packer module to create an Ubuntu 22.04 virtual machine (server or desktop) on Proxmox VE from a cloned template.
+
 # License:
 
 [MIT](LICENSE "MIT License")
