@@ -34,3 +34,6 @@
 [submodule "packer-proxmox-ubuntu-22-04-clone"]
 	path = packer-proxmox-ubuntu-22-04-clone
 	url = https://github.com/lsampaioweb/packer-proxmox-ubuntu-22-04-clone.git
+[submodule "ansible-common-tasks"]
+	path = ansible-common-tasks
+	url = https://github.com/lsampaioweb/ansible-common-tasks.git
