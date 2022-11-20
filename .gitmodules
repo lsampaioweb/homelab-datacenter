@@ -37,3 +37,6 @@
 [submodule "ansible-common-tasks"]
 	path = ansible-common-tasks
 	url = https://github.com/lsampaioweb/ansible-common-tasks.git
+[submodule "load-balancer"]
+	path = load-balancer
+	url = https://github.com/lsampaioweb/load-balancer.git
