@@ -40,3 +40,6 @@
 [submodule "load-balancer"]
 	path = load-balancer
 	url = https://github.com/lsampaioweb/load-balancer.git
+[submodule "proxmox-ubuntu-22-04-server-std-docker"]
+	path = proxmox-ubuntu-22-04-server-std-docker
+	url = https://github.com/lsampaioweb/proxmox-ubuntu-22-04-server-std-docker.git
