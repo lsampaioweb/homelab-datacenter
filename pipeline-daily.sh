@@ -12,7 +12,17 @@ runJumpServerDailyActions() {
 
   cd -
 }
+runProxmoxClusterDailyActions() {
+  echo "Running Proxmox Cluster"
+  cd proxmox_cluster/
+  
+  ansible-playbook control_machine.yml -K
+  ansible-playbook host_machines.yml
+
+  cd -
+}
 
 runJumpServerDailyActions
+runProxmoxClusterDailyActions
 
 }
