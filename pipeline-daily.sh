@@ -8,7 +8,7 @@ runJumpServerDailyActions() {
   echo "Running JumpServer"
   cd jump_server
   
-  ansible-playbook site.yml -K
+  ansible-playbook site.yml
 
   cd -
 }
