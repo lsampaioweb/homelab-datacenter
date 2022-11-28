@@ -43,3 +43,6 @@
 [submodule "proxmox-ubuntu-22-04-server-std-docker"]
 	path = proxmox-ubuntu-22-04-server-std-docker
 	url = https://github.com/lsampaioweb/proxmox-ubuntu-22-04-server-std-docker.git
+[submodule "terraform-random-target-node"]
+	path = terraform-random-target-node
+	url = https://github.com/lsampaioweb/terraform-random-target-node.git
