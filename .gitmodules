@@ -1,9 +1,6 @@
 [submodule "jump_server"]
 	path = jump_server
 	url = https://github.com/lsampaioweb/jump-server.git
-[submodule "proxmox_cluster"]
-	path = proxmox_cluster
-	url = https://github.com/lsampaioweb/proxmox-cluster.git
 [submodule "tplink_router_ax1800"]
 	path = tplink_router_ax1800
 	url = https://github.com/lsampaioweb/tplink_router_ax1800.git
@@ -46,3 +43,6 @@
 [submodule "terraform-random-target-node"]
 	path = terraform-random-target-node
 	url = https://github.com/lsampaioweb/terraform-random-target-node.git
+[submodule "proxmox-cluster"]
+	path = proxmox-cluster
+	url = https://github.com/lsampaioweb/proxmox-cluster.git
