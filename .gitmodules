@@ -1,6 +1,3 @@
-[submodule "jump_server"]
-	path = jump_server
-	url = https://github.com/lsampaioweb/jump-server.git
 [submodule "tplink_router_ax1800"]
 	path = tplink_router_ax1800
 	url = https://github.com/lsampaioweb/tplink_router_ax1800.git
@@ -46,3 +43,6 @@
 [submodule "proxmox-cluster"]
 	path = proxmox-cluster
 	url = https://github.com/lsampaioweb/proxmox-cluster.git
+[submodule "jump-server"]
+	path = jump-server
+	url = https://github.com/lsampaioweb/jump-server.git
