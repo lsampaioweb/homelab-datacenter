@@ -6,7 +6,7 @@ time {
 
 runningPackerBuild() {
   echo "Running $1"
-  cd "Packer/$1"
+  cd "packer/$1"
     ./pipeline.sh
   cd ../../
 }
