@@ -46,3 +46,6 @@
 [submodule "jump-server"]
 	path = projects/jump-server
 	url = https://github.com/lsampaioweb/jump-server.git
+[submodule "projects/firewall"]
+	path = projects/firewall
+	url = https://github.com/lsampaioweb/firewall.git
