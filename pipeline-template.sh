@@ -11,11 +11,11 @@ runningPackerBuild() {
   cd ../../../
 }
 
-# runningPackerBuild "proxmox-ubuntu-22-04-server-raw/packer/"
-# runningPackerBuild "packer/proxmox-ubuntu-22-04-server-standard/packer/"
-# runningPackerBuild "packer/proxmox-ubuntu-22-04-server-std-docker/packer/"
-# runningPackerBuild "packer/proxmox-ubuntu-22-04-desktop-raw/packer/"
-# runningPackerBuild "packer/proxmox-ubuntu-22-04-desktop-standard/packer/"
+runningPackerBuild "proxmox-ubuntu-22-04-server-raw/packer/"
+runningPackerBuild "packer/proxmox-ubuntu-22-04-server-standard/packer/"
+runningPackerBuild "packer/proxmox-ubuntu-22-04-server-std-docker/packer/"
+runningPackerBuild "packer/proxmox-ubuntu-22-04-desktop-raw/packer/"
+runningPackerBuild "packer/proxmox-ubuntu-22-04-desktop-standard/packer/"
 runningPackerBuild "projects/firewall/packer/"
 
 }
