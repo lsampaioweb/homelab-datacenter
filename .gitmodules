@@ -19,9 +19,6 @@
 [submodule "proxmox-ubuntu-22-04-desktop-standard"]
 	path = packer/proxmox-ubuntu-22-04-desktop-standard
 	url = https://github.com/lsampaioweb/proxmox-ubuntu-22-04-desktop-standard.git
-[submodule "terraform-proxmox-ubuntu-22-04-module"]
-	path = terraform/terraform-proxmox-ubuntu-22-04-module
-	url = https://github.com/lsampaioweb/terraform-proxmox-ubuntu-22-04-module.git
 [submodule "packer-proxmox-ubuntu-22-04-iso"]
 	path = packer/packer-proxmox-ubuntu-22-04-iso
 	url = https://github.com/lsampaioweb/packer-proxmox-ubuntu-22-04-iso.git
@@ -49,3 +46,6 @@
 [submodule "projects/firewall"]
 	path = projects/firewall
 	url = https://github.com/lsampaioweb/firewall.git
+[submodule "terraform/terraform-proxmox-vm-module"]
+	path = terraform/terraform-proxmox-vm-module
+	url = https://github.com/lsampaioweb/terraform-proxmox-vm-module.git
