@@ -6,7 +6,7 @@ time {
 
 runOpenSSLDailyActions() {
   echo "Running Open SSL Certificate"
-  cd "projects/openssl_certificates"
+  cd "../datacenter/projects/openssl-certificates"
   
   ansible-playbook site.yml
 
@@ -15,7 +15,7 @@ runOpenSSLDailyActions() {
 
 runJumpServerDailyActions() {
   echo "Running JumpServer"
-  cd "projects/jump-server"
+  cd "../datacenter/projects/jump-server"
   
   ansible-playbook site.yml
 
@@ -24,7 +24,7 @@ runJumpServerDailyActions() {
 
 runProxmoxClusterDailyActions() {
   echo "Running Proxmox Cluster"
-  cd "projects/proxmox-cluster"
+  cd "../datacenter/projects/proxmox-cluster"
   
   ansible-playbook control_machine.yml
   ansible-playbook host_machines.yml
