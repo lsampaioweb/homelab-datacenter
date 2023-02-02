@@ -14,7 +14,7 @@ Repository with all the scripts of my HomeLab.
 #
 1. [Packer Proxmox Ubuntu 22.04 Iso](https://github.com/lsampaioweb/packer-proxmox-ubuntu-22-04-iso) - Repository of a Packer module to create an Ubuntu 22.04 template (server or desktop) on Proxmox VE from an ISO file.
 1. [Packer Proxmox Ubuntu 22.04 Clone](https://github.com/lsampaioweb/packer-proxmox-ubuntu-22-04-clone) - Repository of a Packer module to create an Ubuntu 22.04 template (server or desktop) on Proxmox VE from a cloned template.
-1. [Terraform Proxmox Ubuntu 22.04](https://github.com/lsampaioweb/terraform-proxmox-ubuntu-22-04-module) - Repository of a Terraform module to create an Ubuntu 22.04 virtual machine (server or desktop) on Proxmox VE from a cloned template.
+1. [Terraform Proxmox Ubuntu 22.04](https://github.com/lsampaioweb/terraform-proxmox-vm-qemu) - Repository of a Terraform module to create an Ubuntu 22.04 virtual machine (server or desktop) on Proxmox VE from a cloned template.
 
 #
 1. [Ubuntu Server 22.04 Raw](https://github.com/lsampaioweb/proxmox-ubuntu-22-04-server-raw) - Repository with scripts to create an Ubuntu server template.
