@@ -15,7 +15,7 @@ runOpenSSLDailyActions() {
 
 runJumpServerDailyActions() {
   echo "Running JumpServer"
-  cd "../datacenter/projects/jump-server"
+  cd "../datacenter/projects/jump-server/ansible"
   
   ansible-playbook site.yml
 
@@ -26,8 +26,7 @@ runProxmoxClusterDailyActions() {
   echo "Running Proxmox Cluster"
   cd "../datacenter/projects/proxmox-cluster"
   
-  ansible-playbook control_machine.yml
-  ansible-playbook host_machines.yml
+  ansible-playbook site.yml
 
   cd -
 }

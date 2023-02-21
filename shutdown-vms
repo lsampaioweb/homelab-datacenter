@@ -1,6 +1,8 @@
 # Run on the kvm-07
 
 : << 'MULTILINE-COMMENT'
+qm shutdown 109; \
+qm shutdown 108; \
 qm shutdown 107; \
 qm shutdown 106; \
 qm shutdown 105; \
