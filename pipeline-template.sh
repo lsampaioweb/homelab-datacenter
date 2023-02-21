@@ -20,11 +20,12 @@ runningPackerBuild "../datacenter/projects/firewall/packer/"
 
 }
 
+# Run these commands on the node that has the template files.
 : << 'MULTILINE-COMMENT'
-qm destroy 905 --purge 1 --destroy-unreferenced-disks 1 || \
-qm destroy 904 --purge 1 --destroy-unreferenced-disks 1 || \
-qm destroy 903 --purge 1 --destroy-unreferenced-disks 1 || \
-qm destroy 902 --purge 1 --destroy-unreferenced-disks 1 || \
-qm destroy 901 --purge 1 --destroy-unreferenced-disks 1 || \
+qm destroy 905 --purge 1 --destroy-unreferenced-disks 1; \
+qm destroy 904 --purge 1 --destroy-unreferenced-disks 1; \
+qm destroy 903 --purge 1 --destroy-unreferenced-disks 1; \
+qm destroy 902 --purge 1 --destroy-unreferenced-disks 1; \
+qm destroy 901 --purge 1 --destroy-unreferenced-disks 1; \
 qm destroy 900 --purge 1 --destroy-unreferenced-disks 1
 MULTILINE-COMMENT
