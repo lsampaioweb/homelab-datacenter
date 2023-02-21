@@ -1,6 +1,7 @@
 #!/bin/bash
 set -e # Abort if there is an issue with any build.
 
+# Usage:
 # ./pipeline-deploy.sh staging
 # ./pipeline-deploy.sh production
 
@@ -16,6 +17,7 @@ runningTerraformApply() {
 
 runningTerraformApply "../datacenter/projects/jump-server/terraform/" $1
 runningTerraformApply "../datacenter/projects/load-balancer/terraform/" $1
+runningTerraformApply "../datacenter/projects/dhcp/terraform/" $1
 runningTerraformApply "../datacenter/projects/dns/terraform/" $1
 runningTerraformApply "../datacenter/projects/ntp/terraform/" $1
 
