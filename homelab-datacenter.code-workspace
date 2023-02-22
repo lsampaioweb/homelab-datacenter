@@ -8,6 +8,7 @@
     }
   ],
   "settings": {
-    "git.detectSubmodulesLimit": 100
+    "git.detectSubmodulesLimit": 100,
+    "java.compile.nullAnalysis.mode": "automatic"
   }
 }
