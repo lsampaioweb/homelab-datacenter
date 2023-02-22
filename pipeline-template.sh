@@ -1,6 +1,9 @@
 #!/bin/bash
 set -e # Abort if there is an issue with any build.
 
+# Usage:
+# ./pipeline-template.sh
+
 TIMEFORMAT='Build took %R seconds.'
 time {
 
