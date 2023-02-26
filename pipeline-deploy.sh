@@ -15,7 +15,7 @@ runningTerraformApply() {
   cd -
 }
 
-runningTerraformApply "../datacenter/projects/jump-server/terraform/" $1
+# runningTerraformApply "../datacenter/projects/jump-server/terraform/" $1
 runningTerraformApply "../datacenter/projects/dhcp/terraform/" $1
 runningTerraformApply "../datacenter/projects/dns/terraform/" $1
 runningTerraformApply "../datacenter/projects/load-balancer/terraform/" $1
