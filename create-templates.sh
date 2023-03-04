@@ -10,8 +10,10 @@ time {
 runningPackerBuild() {
   echo "Running $1"
   cd "$1"
-    ./pipeline.sh
+    ./pkr.sh build staging
+    # ./pkr.sh build production
   cd -
+  echo -e "Finished $1\n"
 }
 
 runningPackerBuild "../datacenter/packer/proxmox-ubuntu-22-04-server-raw/packer/"
