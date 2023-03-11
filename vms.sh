@@ -2,8 +2,8 @@
 set -e # Abort if there is an issue with any build.
 
 # Usage:
-# ./pipeline-deploy.sh staging
-# ./pipeline-deploy.sh production
+# ./vms.sh staging
+# ./vms.sh production
 
 TIMEFORMAT='Deploy took %R seconds.'
 time {
