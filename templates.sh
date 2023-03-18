@@ -19,12 +19,12 @@ runningPackerBuild() {
   echo -e "\n"
 }
 
+# runningPackerBuild "proxmox-firewall-server-raw/packer/" $1 $2
 runningPackerBuild "proxmox-ubuntu-22-04-server-raw/packer/" $1 $2
 runningPackerBuild "proxmox-ubuntu-22-04-server-standard/packer/" $1 $2
 runningPackerBuild "proxmox-ubuntu-22-04-server-std-docker/packer/" $1 $2
 runningPackerBuild "proxmox-ubuntu-22-04-desktop-raw/packer/" $1 $2
 runningPackerBuild "proxmox-ubuntu-22-04-desktop-standard/packer/" $1 $2
-# runningPackerBuild "firewall/packer/" $2 $3
 
 # Run these commands on the node that has the template files.
 : << 'MULTILINE-COMMENT'

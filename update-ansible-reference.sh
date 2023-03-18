@@ -25,6 +25,7 @@ updatingSubModule() {
 }
 
 updatingCommonSubModule() {
+  updatingSubModule "../datacenter/packer/proxmox-pfsense-CE/ansible/roles/common/" "common"
   updatingSubModule "../datacenter/packer/proxmox-ubuntu-22-04-server-raw/ansible/roles/common/" "common"
   updatingSubModule "../datacenter/packer/proxmox-ubuntu-22-04-server-standard/ansible/roles/common/" "common"
   updatingSubModule "../datacenter/packer/proxmox-ubuntu-22-04-server-std-docker/ansible/roles/common/" "common"
@@ -41,6 +42,7 @@ updatingCommonSubModule() {
 }
 
 updatingKvmSetupSubModule() {
+  updatingSubModule "../datacenter/packer/proxmox-pfsense-CE/ansible/roles/kvm_setup/" "kvm_setup"
   updatingSubModule "../datacenter/packer/proxmox-ubuntu-22-04-server-raw/ansible/roles/kvm_setup/" "kvm_setup"
   updatingSubModule "../datacenter/packer/proxmox-ubuntu-22-04-server-standard/ansible/roles/kvm_setup/" "kvm_setup"
   updatingSubModule "../datacenter/packer/proxmox-ubuntu-22-04-server-std-docker/ansible/roles/kvm_setup/" "kvm_setup"
