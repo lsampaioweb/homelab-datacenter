@@ -2,7 +2,7 @@
 #set -e # Abort if there is an issue with any build.
 
 # Usage:
-# ./pipeline-daily.sh
+# ./daily-updates.sh
 
 TIMEFORMAT='It took %R seconds.'
 time {
@@ -34,8 +34,8 @@ runProxmoxClusterDailyActions() {
   cd -
 }
 
-runOpenSSLDailyActions
 runJumpServerDailyActions
+runOpenSSLDailyActions
 runProxmoxClusterDailyActions
 
 }
