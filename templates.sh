@@ -2,7 +2,7 @@
 set -e # Abort if there is an issue with any build.
 
 # Usage:
-#   ./template.sh validate staging
+#   ./templates.sh validate staging
 #   $1 -> validate, build.
 #   $2 -> staging, production.
 
