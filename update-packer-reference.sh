@@ -15,7 +15,7 @@ updatingSubModule() {
   echo "git add $2"
   cd ".."
   git add $2
-  git commit -m "Updated Packer submodule."
+  git commit -m "Updated Packer submodule." --author "ZaraMalu Bot<lsampaioweb+zaramalubot@gmail.com>"
   echo "git push"
   git push
 
