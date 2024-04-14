@@ -26,7 +26,6 @@ Repository with all the scripts of my HomeLab.
 #
 ## Projects:
 1. [Project Template](https://github.com/lsampaioweb/git-template-repository) - Repository with scripts to create a project with all the default files and folders.
-1. [Firewall](https://github.com/lsampaioweb/firewall) - Repository with scripts to setup a pfSense firewall.
 1. [Load Balancer](https://github.com/lsampaioweb/load-balancer) - Repository with scripts to setup an Ubuntu server with Traefik installed.
 
 #
@@ -35,6 +34,6 @@ Repository with all the scripts of my HomeLab.
 [MIT](LICENSE "MIT License")
 
 #
-## Created by: 
+## Created by:
 
 1. Luciano Sampaio.
