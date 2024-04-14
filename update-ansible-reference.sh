@@ -32,7 +32,6 @@ updatingCommonSubModule() {
   updatingSubModule "../datacenter/packer/proxmox-ubuntu-22-04-desktop-standard/ansible/roles/common/" "common"
   updatingSubModule "../datacenter/projects/dhcp/ansible/roles/common/" "common"
   updatingSubModule "../datacenter/projects/dns/ansible/roles/common/" "common"
-  updatingSubModule "../datacenter/projects/firewall/ansible/roles/common/" "common"
   updatingSubModule "../datacenter/projects/jump-server/ansible/roles/common/" "common"
   updatingSubModule "../datacenter/projects/load-balancer/ansible/roles/common/" "common"
   updatingSubModule "../datacenter/projects/ntp/ansible/roles/common/" "common"
