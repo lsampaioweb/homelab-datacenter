@@ -1,0 +1,13 @@
+01 - Server - Raw
+  901 - proxmox-ubuntu-22-04-server-raw
+
+02 - Server - Standard
+  911 - proxmox-ubuntu-22-04-server-std
+  912 - proxmox-ubuntu-22-04-server-std-docker
+  913 - proxmox-ubuntu-22-04-server-std-k3s
+
+03 - Desktop - Raw
+  921 - proxmox-ubuntu-22-04-desktop-raw
+
+04 - Desktop - Standard
+  931 - proxmox-ubuntu-22-04-desktop-std
