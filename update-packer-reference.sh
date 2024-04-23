@@ -27,5 +27,7 @@ updatingSubModule() {
 updatingSubModule "../datacenter/packer/proxmox-ubuntu-22-04-server-raw/packer/iso/" "iso"
 updatingSubModule "../datacenter/packer/proxmox-ubuntu-22-04-server-standard/packer/clone/" "clone"
 updatingSubModule "../datacenter/packer/proxmox-ubuntu-22-04-server-std-docker/packer/clone/" "clone"
+updatingSubModule "../datacenter/packer/proxmox-ubuntu-22-04-server-std-k3s/packer/clone/" "clone"
+
 updatingSubModule "../datacenter/packer/proxmox-ubuntu-22-04-desktop-raw/packer/clone/" "clone"
 updatingSubModule "../datacenter/packer/proxmox-ubuntu-22-04-desktop-standard/packer/clone/" "clone"
