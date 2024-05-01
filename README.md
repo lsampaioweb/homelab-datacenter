@@ -29,11 +29,11 @@ Repository with all the scripts of my HomeLab.
 1. [Load Balancer](https://github.com/lsampaioweb/load-balancer) - Repository with scripts to setup an Ubuntu server with Traefik installed.
 
 #
-## License:
+### License:
 
 [MIT](LICENSE "MIT License")
 
 #
-## Created by:
+### Created by:
 
 1. Luciano Sampaio.
