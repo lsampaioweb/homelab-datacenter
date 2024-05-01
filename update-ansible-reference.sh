@@ -30,6 +30,7 @@ updatingCommonSubModule() {
   updatingSubModule "../datacenter/packer/proxmox-ubuntu-22-04-server-std-docker/ansible/roles/common/" "common"
   updatingSubModule "../datacenter/packer/proxmox-ubuntu-22-04-desktop-raw/ansible/roles/common/" "common"
   updatingSubModule "../datacenter/packer/proxmox-ubuntu-22-04-desktop-standard/ansible/roles/common/" "common"
+
   updatingSubModule "../datacenter/projects/dhcp/ansible/roles/common/" "common"
   updatingSubModule "../datacenter/projects/dns/ansible/roles/common/" "common"
   updatingSubModule "../datacenter/projects/jump-server/ansible/roles/common/" "common"
@@ -37,6 +38,8 @@ updatingCommonSubModule() {
   updatingSubModule "../datacenter/projects/ntp/ansible/roles/common/" "common"
   updatingSubModule "../datacenter/projects/openssl-certificates/roles/common/" "common"
   updatingSubModule "../datacenter/projects/proxmox-cluster/roles/common/" "common"
+
+  updatingSubModule "../home/home-edge-firewall/playbook/roles/common/" "common"
 }
 
 updatingKvmSetupSubModule() {
