@@ -2,7 +2,7 @@
 Repository with all the scripts of my HomeLab.
 
 #
-## Modules:
+### Modules:
 1. [Jump-Server](https://github.com/lsampaioweb/jump-server) - Repository with scripts to setup an Ubuntu Desktop with all the default applications and settings.
 1. [Openssl Certificates](https://github.com/lsampaioweb/openssl-certificates) - Repository with scripts that can verify if the certificate created by our own Certificate Authority (CA) is still valid. Can also create a new one and import it into several different applications.
 
@@ -24,7 +24,7 @@ Repository with all the scripts of my HomeLab.
 1. [Ubuntu Desktop 22.04 Standard](https://github.com/lsampaioweb/proxmox-ubuntu-22-04-desktop-standard) - Repository with scripts to create my Ubuntu Desktop WorkStation.
 
 #
-## Projects:
+### Projects:
 1. [Project Template](https://github.com/lsampaioweb/git-template-repository) - Repository with scripts to create a project with all the default files and folders.
 1. [Load Balancer](https://github.com/lsampaioweb/load-balancer) - Repository with scripts to setup an Ubuntu server with Traefik installed.
 
