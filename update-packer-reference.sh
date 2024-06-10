@@ -1,5 +1,5 @@
 #!/bin/bash
-# set -e # Abort if there is an issue when running.
+set -e # Abort if there is an issue when running.
 
 # Usage:
 # ./update-packer-reference.sh

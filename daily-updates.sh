@@ -1,5 +1,5 @@
 #!/bin/bash
-#set -e # Abort if there is an issue with any build.
+set -e # Abort if there is an issue with any build.
 
 # Usage:
 # ./daily-updates.sh
@@ -10,7 +10,7 @@ time {
 runOpenSSLDailyActions() {
   echo "Running Open SSL Certificate"
   cd "../datacenter/projects/openssl-certificates"
-  
+
   ansible-playbook site.yml
 
   cd -
@@ -19,7 +19,7 @@ runOpenSSLDailyActions() {
 runJumpServerDailyActions() {
   echo "Running JumpServer"
   cd "../datacenter/projects/jump-server/ansible"
-  
+
   ansible-playbook site.yml
 
   cd -
@@ -28,7 +28,7 @@ runJumpServerDailyActions() {
 runProxmoxClusterDailyActions() {
   echo "Running Proxmox Cluster"
   cd "../datacenter/projects/proxmox-cluster"
-  
+
   ansible-playbook site.yml
 
   cd -
