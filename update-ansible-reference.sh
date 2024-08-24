@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e # Abort if there is an issue when running.
+# set -e # Abort if there is an issue when running.
 
 # Usage:
 # ./update-ansible-reference.sh
@@ -25,11 +25,13 @@ updatingSubModule() {
 }
 
 updatingCommonSubModule() {
+  updatingSubModule "../datacenter/packer/proxmox-ubuntu-22-04-desktop-raw/ansible/roles/common/" "common"
+  updatingSubModule "../datacenter/packer/proxmox-ubuntu-22-04-desktop-standard/ansible/roles/common/" "common"
+
   updatingSubModule "../datacenter/packer/proxmox-ubuntu-22-04-server-raw/ansible/roles/common/" "common"
   updatingSubModule "../datacenter/packer/proxmox-ubuntu-22-04-server-standard/ansible/roles/common/" "common"
   updatingSubModule "../datacenter/packer/proxmox-ubuntu-22-04-server-std-docker/ansible/roles/common/" "common"
-  updatingSubModule "../datacenter/packer/proxmox-ubuntu-22-04-desktop-raw/ansible/roles/common/" "common"
-  updatingSubModule "../datacenter/packer/proxmox-ubuntu-22-04-desktop-standard/ansible/roles/common/" "common"
+  updatingSubModule "../datacenter/packer/proxmox-ubuntu-22-04-server-std-k3s/ansible/roles/common/" "common"
 
   updatingSubModule "../datacenter/projects/dhcp/ansible/roles/common/" "common"
   updatingSubModule "../datacenter/projects/dns/ansible/roles/common/" "common"
@@ -43,11 +45,13 @@ updatingCommonSubModule() {
 }
 
 updatingKvmSetupSubModule() {
+  updatingSubModule "../datacenter/packer/proxmox-ubuntu-22-04-desktop-raw/ansible/roles/kvm_setup/" "kvm_setup"
+  updatingSubModule "../datacenter/packer/proxmox-ubuntu-22-04-desktop-standard/ansible/roles/kvm_setup/" "kvm_setup"
+
   updatingSubModule "../datacenter/packer/proxmox-ubuntu-22-04-server-raw/ansible/roles/kvm_setup/" "kvm_setup"
   updatingSubModule "../datacenter/packer/proxmox-ubuntu-22-04-server-standard/ansible/roles/kvm_setup/" "kvm_setup"
   updatingSubModule "../datacenter/packer/proxmox-ubuntu-22-04-server-std-docker/ansible/roles/kvm_setup/" "kvm_setup"
-  updatingSubModule "../datacenter/packer/proxmox-ubuntu-22-04-desktop-raw/ansible/roles/kvm_setup/" "kvm_setup"
-  updatingSubModule "../datacenter/packer/proxmox-ubuntu-22-04-desktop-standard/ansible/roles/kvm_setup/" "kvm_setup"
+  updatingSubModule "../datacenter/packer/proxmox-ubuntu-22-04-server-std-k3s/ansible/roles/kvm_setup/" "kvm_setup"
 }
 
 updatingCommonSubModule
