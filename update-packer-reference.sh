@@ -9,7 +9,8 @@ updatingSubModule() {
 
   echo "git pull on $1"
   cd "$1"
-  git pull
+  git submodule init
+  git pull --recurse-submodules
 
   echo "git add $2"
   cd ".."
