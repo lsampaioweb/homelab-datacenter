@@ -33,13 +33,14 @@ updatingCommonSubModule() {
   updatingSubModule "../datacenter/packer/proxmox-ubuntu-22-04-server-std-docker/ansible/roles/common/" "common"
   updatingSubModule "../datacenter/packer/proxmox-ubuntu-22-04-server-std-k3s/ansible/roles/common/" "common"
 
-  updatingSubModule "../datacenter/projects/dhcp/ansible/roles/common/" "common"
-  updatingSubModule "../datacenter/projects/dns/ansible/roles/common/" "common"
-  updatingSubModule "../datacenter/projects/jump-server/ansible/roles/common/" "common"
-  updatingSubModule "../datacenter/projects/load-balancer/ansible/roles/common/" "common"
-  updatingSubModule "../datacenter/projects/ntp/ansible/roles/common/" "common"
-  updatingSubModule "../datacenter/projects/openssl-certificates/roles/common/" "common"
-  updatingSubModule "../datacenter/projects/proxmox-cluster/roles/common/" "common"
+  updatingSubModule "../datacenter/projects/01-proxmox-cluster/roles/common/" "common"
+  updatingSubModule "../datacenter/projects/02-jump-server/ansible/roles/common/" "common"
+  updatingSubModule "../datacenter/projects/03-backup-manager/ansible/roles/common/" "common"
+  updatingSubModule "../datacenter/projects/04-dhcp/ansible/roles/common/" "common"
+  updatingSubModule "../datacenter/projects/05-dns/ansible/roles/common/" "common"
+  updatingSubModule "../datacenter/projects/06-ntp/ansible/roles/common/" "common"
+  updatingSubModule "../datacenter/projects/07-openssl-certificates/roles/common/" "common"
+  updatingSubModule "../datacenter/projects/08-load-balancer/ansible/roles/common/" "common"
 
   updatingSubModule "../home/home-edge-firewall/playbook/roles/common/" "common"
 }
