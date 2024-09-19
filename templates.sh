@@ -9,7 +9,7 @@ set -e # Abort if there is an issue with any build.
 runningPackerBuild() {
   TIMEFORMAT='Build took %R seconds.'
   time {
-    echo "Running $1"
+    echo "Running $1 with commands: $2 - $3"
     cd "../datacenter/packer/$1"
       ./pkr.sh $2 $3
     cd -
@@ -21,7 +21,6 @@ runningPackerBuild() {
 
 function createTemplates() {
   runningPackerBuild "proxmox-ubuntu-22-04-server-raw/packer/" $1 $2
-
   runningPackerBuild "proxmox-ubuntu-22-04-server-standard/packer/" $1 $2
   runningPackerBuild "proxmox-ubuntu-22-04-server-std-docker/packer/" $1 $2
   # runningPackerBuild "proxmox-ubuntu-22-04-server-std-k3s/packer/" $1 $2
@@ -30,7 +29,7 @@ function createTemplates() {
   runningPackerBuild "proxmox-ubuntu-22-04-desktop-standard/packer/" $1 $2
 }
 
-createTemplates
+createTemplates $1 $2
 
 # # Run these commands on the node that has the template files.
 # : << 'MULTILINE-COMMENT'
