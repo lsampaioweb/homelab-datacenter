@@ -10,7 +10,7 @@ runningPackerBuild() {
   TIMEFORMAT='Build took %R seconds.'
   time {
     echo "Running $1 with commands: $2 - $3"
-    cd "../datacenter/packer/$1"
+    cd "../datacenter/02-packer/$1"
       ./pkr.sh $2 $3
     cd -
     echo "Finished $1"
@@ -20,13 +20,13 @@ runningPackerBuild() {
 }
 
 function createTemplates() {
-  runningPackerBuild "proxmox-ubuntu-22-04-server-raw/packer/" $1 $2
-  runningPackerBuild "proxmox-ubuntu-22-04-server-standard/packer/" $1 $2
-  runningPackerBuild "proxmox-ubuntu-22-04-server-std-docker/packer/" $1 $2
-  # runningPackerBuild "proxmox-ubuntu-22-04-server-std-k3s/packer/" $1 $2
+  runningPackerBuild "03-proxmox-ubuntu-22-04-server-raw/packer/" $1 $2
+  runningPackerBuild "04-proxmox-ubuntu-22-04-server-standard/packer/" $1 $2
+  runningPackerBuild "05-proxmox-ubuntu-22-04-server-std-docker/packer/" $1 $2
+  # runningPackerBuild "06-proxmox-ubuntu-22-04-server-std-k3s/packer/" $1 $2
 
-  runningPackerBuild "proxmox-ubuntu-22-04-desktop-raw/packer/" $1 $2
-  runningPackerBuild "proxmox-ubuntu-22-04-desktop-standard/packer/" $1 $2
+  runningPackerBuild "07-proxmox-ubuntu-22-04-desktop-raw/packer/" $1 $2
+  runningPackerBuild "08-proxmox-ubuntu-22-04-desktop-standard/packer/" $1 $2
 }
 
 createTemplates $1 $2

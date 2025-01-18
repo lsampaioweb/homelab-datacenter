@@ -15,10 +15,11 @@ runningTerraformApply() {
   cd -
 }
 
-# runningTerraformApply "../datacenter/projects/jump-server/terraform/" $1
-runningTerraformApply "../datacenter/projects/dhcp/terraform/" $1
-runningTerraformApply "../datacenter/projects/dns/terraform/" $1
-runningTerraformApply "../datacenter/projects/load-balancer/terraform/" $1
-runningTerraformApply "../datacenter/projects/ntp/terraform/" $1
+# runningTerraformApply "../datacenter/06-projects/01-working-machine/terraform/" $1
+runningTerraformApply "../datacenter/06-projects/04-load-balancer/terraform/" $1
+# runningTerraformApply "../datacenter/06-projects/05-backup-manager/terraform/" $1
+runningTerraformApply "../datacenter/06-projects/06-dhcp/terraform/" $1
+runningTerraformApply "../datacenter/06-projects/07-dns/terraform/" $1
+runningTerraformApply "../datacenter/06-projects/08-ntp/terraform/" $1
 
 }
