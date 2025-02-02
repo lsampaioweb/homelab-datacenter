@@ -1,39 +1,76 @@
 # Homelab Datacenter
-Repository with all the scripts of my HomeLab.
+
+This repository serves as a central index for my homelab projects, which use **Packer**, **Terraform**, and **Ansible** to automate infrastructure provisioning. Below, you’ll find links to various repositories that allow you to recreate my homelab setup from scratch.
 
 #
-### Modules:
-1. [Jump-Server](https://github.com/lsampaioweb/jump-server) - Repository with scripts to setup an Ubuntu Desktop with all the default applications and settings.
-1. [Openssl Certificates](https://github.com/lsampaioweb/openssl-certificates) - Repository with scripts that can verify if the certificate created by our own Certificate Authority (CA) is still valid. Can also create a new one and import it into several different applications.
+### Packer Modules
+Packer modules that help automate the creation of VM templates in Proxmox VE. You can choose to build a template from an ISO or from a cloned template.
+
+- **[Packer Proxmox Ubuntu 24.04 ISO](https://github.com/lsampaioweb/packer-proxmox-ubuntu-22-04-iso)** - Packer module to create an Ubuntu 24.04 template from an ISO.
+- **[Packer Proxmox Ubuntu 24.04 Clone](https://github.com/lsampaioweb/packer-proxmox-ubuntu-22-04-clone)** - Packer module to create an Ubuntu 24.04 template from a cloned template.
 
 #
-1. [Router - AX1800](https://github.com/lsampaioweb/tplink_router_ax1800) - Repository with scripts to interact with the TP-LINK router AX1800.
-1. [Switch - T1600G-28TS-SG2424](https://github.com/lsampaioweb/T1600G-28TS-SG2424) - Repository with scripts to interact with the TP-LINK Switch SFP T1600G-28TS-SG2424.
-1. [KVM - Proxmox-Cluster](https://github.com/lsampaioweb/proxmox-cluster) - Repository with scripts to setup a Proxmox Cluster.
+### Terraform Modules
+Terraform modules that help automate VM creation and infrastructure provisioning in the homelab.
+
+- **[Terraform Random Target Node](https://github.com/lsampaioweb/terraform-random-target-node)** - Generates random numbers for selecting which Proxmox node will host a new VM.
+- **[Terraform Local Dynamic Inventory](https://github.com/lsampaioweb/terraform-local-dynamic-inventory)** - Generates local dynamic Ansible inventory files.
+- **[Terraform Proxmox VM QEMU](https://github.com/lsampaioweb/terraform-proxmox-vm-qemu)** - Automates VM creation in Proxmox VE.
+- **[Terraform Proxmox Homelab Project](https://github.com/lsampaioweb/terraform-proxmox-homelab-project)** - Default Terraform configurations for the homelab projects.
 
 #
-1. [Packer Proxmox Ubuntu 22.04 Iso](https://github.com/lsampaioweb/packer-proxmox-ubuntu-22-04-iso) - Repository of a Packer module to create an Ubuntu 22.04 template (server or desktop) on Proxmox VE from an ISO file.
-1. [Packer Proxmox Ubuntu 22.04 Clone](https://github.com/lsampaioweb/packer-proxmox-ubuntu-22-04-clone) - Repository of a Packer module to create an Ubuntu 22.04 template (server or desktop) on Proxmox VE from a cloned template.
-1. [Terraform Proxmox Ubuntu 22.04](https://github.com/lsampaioweb/terraform-proxmox-vm-qemu) - Repository of a Terraform module to create an Ubuntu 22.04 virtual machine (server or desktop) on Proxmox VE from a cloned template.
+### Ansible Modules
+Reusable Ansible playbooks and tasks for configuring VMs.
+
+- **[Ansible Common Tasks](https://github.com/lsampaioweb/ansible-common-tasks)** - Common Ansible tasks that can be used in other playbooks.
+- **[Ansible KVM Cloud Init](https://github.com/lsampaioweb/ansible-kvm-cloud-init)** - Sets up cloud-init settings on KVM instances.
 
 #
-1. [Ubuntu Server 22.04 Raw](https://github.com/lsampaioweb/proxmox-ubuntu-22-04-server-raw) - Repository with scripts to create an Ubuntu server template.
-1. [Ubuntu Server 22.04 Standard](https://github.com/lsampaioweb/proxmox-ubuntu-22-04-server-standard) - Repository with scripts to create an Ubuntu server template.
-1. [Ubuntu Server 22.04 Docker](https://github.com/lsampaioweb/proxmox-ubuntu-22-04-server-std-docker) - Repository with scripts to create an Ubuntu server template with Docker already installed.
-1. [Ubuntu Desktop 22.04 Raw](https://github.com/lsampaioweb/proxmox-ubuntu-22-04-desktop-raw) - Repository with scripts to create my Ubuntu Desktop WorkStation.
-1. [Ubuntu Desktop 22.04 Standard](https://github.com/lsampaioweb/proxmox-ubuntu-22-04-desktop-standard) - Repository with scripts to create my Ubuntu Desktop WorkStation.
+### Template Project
+- **[Template Project](https://github.com/lsampaioweb/git-template-repository)** - Scripts to create a project with all default files and folders.
 
 #
-### Projects:
-1. [Project Template](https://github.com/lsampaioweb/git-template-repository) - Repository with scripts to create a project with all the default files and folders.
-1. [Load Balancer](https://github.com/lsampaioweb/load-balancer) - Repository with scripts to setup an Ubuntu server with Traefik installed.
+### Infrastructure Projects
+Scripts for setting up key network and infrastructure components in the homelab.
+
+- **[Router - AX1800](https://github.com/lsampaioweb/tplink_router_ax1800)** - Scripts to configure the TP-Link AX1800 router.
+- **[Firewall Fortigate 80E](https://github.com/lsampaioweb/home-edge-firewall)** - Configuration scripts for the Fortigate 80E firewall.
+- **[Switch - T1600G-28TS-SG2424](https://github.com/lsampaioweb/T1600G-28TS-SG2424)** - Setup scripts for the TP-Link SFP switch T1600G-28TS SG2424.
+- **[KVM - Proxmox-Cluster](https://github.com/lsampaioweb/proxmox-cluster)** - Scripts to create and manage a Proxmox Cluster.
 
 #
-### License:
+### Packer Projects
+Projects for creating Ubuntu VM templates using Packer.
 
-[MIT](LICENSE "MIT License")
+- **[Ubuntu Server 24.04 Raw](https://github.com/lsampaioweb/proxmox-ubuntu-22-04-server-raw)** - Ubuntu template from an ISO with the bare minimum packages and updates.
+- **[Ubuntu Server 24.04 Standard](https://github.com/lsampaioweb/proxmox-ubuntu-22-04-server-standard)** - Ubuntu template from a cloned template.
+- **[Ubuntu Server 24.04 Docker](https://github.com/lsampaioweb/proxmox-ubuntu-22-04-server-std-docker)** - Ubuntu template from the server-standard with Docker installed.
+- **[Ubuntu Desktop 24.04 Raw](https://github.com/lsampaioweb/proxmox-ubuntu-22-04-desktop-raw)** - Ubuntu Desktop template from an ISO with the bare minimum packages and updates.
+- **[Ubuntu Desktop 24.04 Standard](https://github.com/lsampaioweb/proxmox-ubuntu-22-04-desktop-standard)** - Ubuntu Desktop template from a cloned template with default packages.
 
 #
-### Created by:
+### Virtual Machine Projects
+Projects focused on deploying and managing specific VMs.
 
-1. Luciano Sampaio.
+- **[Jump Server](https://github.com/lsampaioweb/jump-server.git)** - Creates VMs that function as jump servers.
+- **[OpenSSL Certificates](https://github.com/lsampaioweb/openssl-certificates.git)** - Automates OpenSSL certificate creation and verification with Ansible.
+- **[Load Balancer](https://github.com/lsampaioweb/load-balancer)** - Deploys VMs running Traefik for load balancing.
+- **[Backup Manager](https://github.com/lsampaioweb/backup-manager)** - Scripts and configurations for setting up and managing Restic backups and restores across VMs.
+
+#
+### Usage Instructions
+To get started:
+1. Ensure you have **Proxmox VE** installed and properly configured.
+2. Clone the repositories relevant to your setup.
+3. Follow the instructions in each repository’s README.
+4. Use **Terraform** and **Ansible** to deploy and configure VMs automatically.
+
+For detailed steps, refer to the individual repository documentation.
+
+#
+### License
+This project is licensed under the [MIT License](LICENSE).
+
+#
+### Created by
+- **Luciano Sampaio**
