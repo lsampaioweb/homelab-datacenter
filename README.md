@@ -56,6 +56,9 @@ Projects focused on deploying and managing specific VMs.
 - **[OpenSSL Certificates](https://github.com/lsampaioweb/openssl-certificates.git)** - Automates OpenSSL certificate creation and verification with Ansible.
 - **[Load Balancer](https://github.com/lsampaioweb/load-balancer)** - Deploys VMs running Traefik for load balancing.
 - **[Backup Manager](https://github.com/lsampaioweb/backup-manager)** - Scripts and configurations for setting up and managing Restic backups and restores across VMs.
+- **[DHCP](https://github.com/lsampaioweb/dhcp)** - Project that will create the VMs that will work as the DHCP servers of the HomeLab.
+- **[DNS](https://github.com/lsampaioweb/dns)** - Project that will create the VMs that will work as the DNS servers of the HomeLab.
+- **[NTP](https://github.com/lsampaioweb/ntp)** - Project that will create the VMs that will work as the NTP servers of the HomeLab.
 
 #
 ### Usage Instructions
