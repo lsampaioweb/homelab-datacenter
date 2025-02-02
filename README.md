@@ -52,13 +52,13 @@ Projects for creating Ubuntu VM templates using Packer.
 ### Virtual Machine Projects
 Projects focused on deploying and managing specific VMs.
 
-- **[Jump Server](https://github.com/lsampaioweb/jump-server.git)** - Deploys VMs that function as jump servers.
-- **[OpenSSL Certificates](https://github.com/lsampaioweb/openssl-certificates.git)** - Automates OpenSSL certificate creation and verification with Ansible.
-- **[Load Balancer](https://github.com/lsampaioweb/load-balancer)** - Deploys VMs that function as load balancing (with Traefik) servers.
-- **[Backup Manager](https://github.com/lsampaioweb/backup-manager)** - Scripts and configurations for setting up and managing Restic backups and restores across VMs.
-- **[DHCP](https://github.com/lsampaioweb/dhcp)** - Deploys VMs that function as DHCP servers.
-- **[DNS](https://github.com/lsampaioweb/dns)** - Deploys VMs that function as DNS servers.
-- **[NTP](https://github.com/lsampaioweb/ntp)** - Deploys VMs that function as NTP servers.
+1. **[Jump Server](https://github.com/lsampaioweb/jump-server.git)** - Deploys VMs that function as jump servers.
+1. **[OpenSSL Certificates](https://github.com/lsampaioweb/openssl-certificates.git)** - Automates OpenSSL certificate creation and verification with Ansible.
+1. **[Load Balancer](https://github.com/lsampaioweb/load-balancer)** - Deploys VMs that function as load balancing (with Traefik) servers.
+1. **[Backup Manager](https://github.com/lsampaioweb/backup-manager)** - Scripts and configurations for setting up and managing Restic backups and restores across VMs.
+1. **[DHCP](https://github.com/lsampaioweb/dhcp)** - Deploys VMs that function as DHCP servers.
+1. **[DNS](https://github.com/lsampaioweb/dns)** - Deploys VMs that function as DNS servers.
+1. **[NTP](https://github.com/lsampaioweb/ntp)** - Deploys VMs that function as NTP servers.
 
 #
 ### Usage Instructions
