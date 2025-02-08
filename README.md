@@ -52,8 +52,9 @@ Projects for creating Ubuntu VM templates using Packer.
 ### Virtual Machine Projects
 Projects focused on deploying and managing specific VMs.
 
-1. **[Jump Server](https://github.com/lsampaioweb/jump-server.git)** - Deploys VMs that function as jump servers.
-1. **[OpenSSL Certificates](https://github.com/lsampaioweb/openssl-certificates.git)** - Automates OpenSSL certificate creation and verification with Ansible.
+1. **[Jump Server](https://github.com/lsampaioweb/jump-server)** - Deploys VMs that function as jump servers.
+1. **[OpenSSL Certificates](https://github.com/lsampaioweb/openssl-certificates)** - Automates OpenSSL certificate creation and verification with Ansible.
+1. **[Proxmox Cluster](https://github.com/lsampaioweb/proxmox-cluster)** - Scripts to create and manage a Proxmox Cluster.
 1. **[Load Balancer](https://github.com/lsampaioweb/load-balancer)** - Deploys VMs that function as load balancing (with Traefik) servers.
 1. **[Backup Manager](https://github.com/lsampaioweb/backup-manager)** - Scripts and configurations for setting up and managing Restic backups and restores across VMs.
 1. **[DHCP](https://github.com/lsampaioweb/dhcp)** - Deploys VMs that function as DHCP servers.
