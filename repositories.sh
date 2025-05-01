@@ -22,7 +22,7 @@ updateGitRepository() {
   if git status --porcelain | grep -q .; then
     echo "New submodule commits detected, committing..."
     git add .
-    git commit -m "chore: Update submodule commits" || { echo "Error: Commit failed"; popd > /dev/null; return 1; }
+    git commit -m "chore: Update submodule commits" --author "Bot<lsampaioweb+bot@gmail.com>" || { echo "Error: Commit failed"; popd > /dev/null; return 1; }
     git push origin main || { echo "Error: Push failed"; popd > /dev/null; return 1; }
   fi
 
