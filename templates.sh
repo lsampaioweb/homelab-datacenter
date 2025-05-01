@@ -20,24 +20,21 @@ runningPackerBuild() {
 }
 
 function createTemplates() {
-  runningPackerBuild "03-proxmox-ubuntu-22-04-server-raw/packer/" $1 $2
-  runningPackerBuild "04-proxmox-ubuntu-22-04-server-standard/packer/" $1 $2
-  runningPackerBuild "05-proxmox-ubuntu-22-04-server-std-docker/packer/" $1 $2
-  # runningPackerBuild "06-proxmox-ubuntu-22-04-server-std-k3s/packer/" $1 $2
+  runningPackerBuild "10-proxmox-ubuntu-server-raw/packer/" $1 $2
+  runningPackerBuild "11-proxmox-ubuntu-server-standard/packer/" $1 $2
+  runningPackerBuild "12-proxmox-ubuntu-server-std-docker/packer/" $1 $2
 
-  runningPackerBuild "07-proxmox-ubuntu-22-04-desktop-raw/packer/" $1 $2
-  runningPackerBuild "08-proxmox-ubuntu-22-04-desktop-standard/packer/" $1 $2
+  runningPackerBuild "20-proxmox-ubuntu-desktop-raw/packer/" $1 $2
+  runningPackerBuild "21-proxmox-ubuntu-desktop-standard/packer/" $1 $2
 }
 
 createTemplates $1 $2
 
 # # Run these commands on the node that has the template files.
 # : << 'MULTILINE-COMMENT'
-# qm destroy 931 --purge 1 --destroy-unreferenced-disks 1; \
-# qm destroy 921 --purge 1 --destroy-unreferenced-disks 1; \
-# qm destroy 914 --purge 1 --destroy-unreferenced-disks 1; \
-# qm destroy 913 --purge 1 --destroy-unreferenced-disks 1; \
-# qm destroy 912 --purge 1 --destroy-unreferenced-disks 1; \
 # qm destroy 911 --purge 1 --destroy-unreferenced-disks 1; \
-# qm destroy 901 --purge 1 --destroy-unreferenced-disks 1
+# qm destroy 910 --purge 1 --destroy-unreferenced-disks 1; \
+# qm destroy 902 --purge 1 --destroy-unreferenced-disks 1; \
+# qm destroy 901 --purge 1 --destroy-unreferenced-disks 1; \
+# qm destroy 900 --purge 1 --destroy-unreferenced-disks 1
 # MULTILINE-COMMENT

@@ -6,8 +6,8 @@ This repository serves as a central index for my homelab projects, which use **P
 ### Packer Modules
 Packer modules that help automate the creation of VM templates in Proxmox VE. You can choose to build a template from an ISO or from a cloned template.
 
-- **[Packer Proxmox Ubuntu 24.04 ISO](https://github.com/lsampaioweb/packer-proxmox-ubuntu-22-04-iso)** - Packer module to create an Ubuntu 24.04 template from an ISO.
-- **[Packer Proxmox Ubuntu 24.04 Clone](https://github.com/lsampaioweb/packer-proxmox-ubuntu-22-04-clone)** - Packer module to create an Ubuntu 24.04 template from a cloned template.
+- **[Packer Proxmox Ubuntu 24.04 ISO](https://github.com/lsampaioweb/packer-proxmox-ubuntu-iso)** - Packer module to create an Ubuntu 24.04 template from an ISO.
+- **[Packer Proxmox Ubuntu 24.04 Clone](https://github.com/lsampaioweb/packer-proxmox-ubuntu-clone)** - Packer module to create an Ubuntu 24.04 template from a cloned template.
 
 #
 ### Terraform Modules
@@ -42,11 +42,11 @@ Scripts for setting up key network and infrastructure components in the homelab.
 ### Packer Projects
 Projects for creating Ubuntu VM templates using Packer.
 
-- **[Ubuntu Server 24.04 Raw](https://github.com/lsampaioweb/proxmox-ubuntu-22-04-server-raw)** - Ubuntu template from an ISO with the bare minimum packages and updates.
-- **[Ubuntu Server 24.04 Standard](https://github.com/lsampaioweb/proxmox-ubuntu-22-04-server-standard)** - Ubuntu template from a cloned template.
-- **[Ubuntu Server 24.04 Docker](https://github.com/lsampaioweb/proxmox-ubuntu-22-04-server-std-docker)** - Ubuntu template from the server-standard with Docker installed.
-- **[Ubuntu Desktop 24.04 Raw](https://github.com/lsampaioweb/proxmox-ubuntu-22-04-desktop-raw)** - Ubuntu Desktop template from an ISO with the bare minimum packages and updates.
-- **[Ubuntu Desktop 24.04 Standard](https://github.com/lsampaioweb/proxmox-ubuntu-22-04-desktop-standard)** - Ubuntu Desktop template from a cloned template with default packages.
+- **[Ubuntu Server 24.04 Raw](https://github.com/lsampaioweb/proxmox-ubuntu-server-raw)** - Ubuntu template from an ISO with the bare minimum packages and updates.
+- **[Ubuntu Server 24.04 Standard](https://github.com/lsampaioweb/proxmox-ubuntu-server-standard)** - Ubuntu template from a cloned template.
+- **[Ubuntu Server 24.04 Docker](https://github.com/lsampaioweb/proxmox-ubuntu-server-std-docker)** - Ubuntu template from the server-standard with Docker installed.
+- **[Ubuntu Desktop 24.04 Raw](https://github.com/lsampaioweb/proxmox-ubuntu-desktop-raw)** - Ubuntu Desktop template from an ISO with the bare minimum packages and updates.
+- **[Ubuntu Desktop 24.04 Standard](https://github.com/lsampaioweb/proxmox-ubuntu-desktop-standard)** - Ubuntu Desktop template from a cloned template with default packages.
 
 #
 ### Virtual Machine Projects

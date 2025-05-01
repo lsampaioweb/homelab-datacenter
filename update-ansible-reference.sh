@@ -26,13 +26,12 @@ updatingSubModule() {
 }
 
 updatingCommonSubModule() {
-  updatingSubModule "../datacenter/02-packer/03-proxmox-ubuntu-22-04-server-raw/ansible/roles/common/" "common"
-  updatingSubModule "../datacenter/02-packer/04-proxmox-ubuntu-22-04-server-standard/ansible/roles/common/" "common"
-  updatingSubModule "../datacenter/02-packer/05-proxmox-ubuntu-22-04-server-std-docker/ansible/roles/common/" "common"
-  updatingSubModule "../datacenter/02-packer/06-proxmox-ubuntu-22-04-server-std-k3s/ansible/roles/common/" "common"
+  updatingSubModule "../datacenter/02-packer/10-proxmox-ubuntu-server-raw/ansible/roles/common/" "common"
+  updatingSubModule "../datacenter/02-packer/11-proxmox-ubuntu-server-standard/ansible/roles/common/" "common"
+  updatingSubModule "../datacenter/02-packer/12-proxmox-ubuntu-server-std-docker/ansible/roles/common/" "common"
 
-  updatingSubModule "../datacenter/02-packer/07-proxmox-ubuntu-22-04-desktop-raw/ansible/roles/common/" "common"
-  updatingSubModule "../datacenter/02-packer/08-proxmox-ubuntu-22-04-desktop-standard/ansible/roles/common/" "common"
+  updatingSubModule "../datacenter/02-packer/20-proxmox-ubuntu-desktop-raw/ansible/roles/common/" "common"
+  updatingSubModule "../datacenter/02-packer/21-proxmox-ubuntu-desktop-standard/ansible/roles/common/" "common"
 
   updatingSubModule "../datacenter/06-projects/01-working-machine/ansible/roles/common/" "common"
   updatingSubModule "../datacenter/06-projects/02-openssl-certificates/roles/common/" "common"
@@ -47,13 +46,12 @@ updatingCommonSubModule() {
 }
 
 updatingKvmSetupSubModule() {
-  updatingSubModule "../datacenter/02-packer/03-proxmox-ubuntu-22-04-server-raw/ansible/roles/kvm_setup/" "kvm_setup"
-  updatingSubModule "../datacenter/02-packer/04-proxmox-ubuntu-22-04-server-standard/ansible/roles/kvm_setup/" "kvm_setup"
-  updatingSubModule "../datacenter/02-packer/05-proxmox-ubuntu-22-04-server-std-docker/ansible/roles/kvm_setup/" "kvm_setup"
-  updatingSubModule "../datacenter/02-packer/06-proxmox-ubuntu-22-04-server-std-k3s/ansible/roles/kvm_setup/" "kvm_setup"
+  updatingSubModule "../datacenter/02-packer/10-proxmox-ubuntu-server-raw/ansible/roles/kvm_setup/" "kvm_setup"
+  updatingSubModule "../datacenter/02-packer/11-proxmox-ubuntu-server-standard/ansible/roles/kvm_setup/" "kvm_setup"
+  updatingSubModule "../datacenter/02-packer/12-proxmox-ubuntu-server-std-docker/ansible/roles/kvm_setup/" "kvm_setup"
 
-  updatingSubModule "../datacenter/02-packer/07-proxmox-ubuntu-22-04-desktop-raw/ansible/roles/kvm_setup/" "kvm_setup"
-  updatingSubModule "../datacenter/02-packer/08-proxmox-ubuntu-22-04-desktop-standard/ansible/roles/kvm_setup/" "kvm_setup"
+  updatingSubModule "../datacenter/02-packer/20-proxmox-ubuntu-desktop-raw/ansible/roles/kvm_setup/" "kvm_setup"
+  updatingSubModule "../datacenter/02-packer/21-proxmox-ubuntu-desktop-standard/ansible/roles/kvm_setup/" "kvm_setup"
 }
 
 updatingCommonSubModule

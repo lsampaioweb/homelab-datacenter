@@ -24,10 +24,9 @@ updatingSubModule() {
   echo "Finished."
 }
 
-updatingSubModule "../datacenter/02-packer/03-proxmox-ubuntu-22-04-server-raw/packer/iso/" "iso"
-updatingSubModule "../datacenter/02-packer/04-proxmox-ubuntu-22-04-server-standard/packer/clone/" "clone"
-updatingSubModule "../datacenter/02-packer/05-proxmox-ubuntu-22-04-server-std-docker/packer/clone/" "clone"
-updatingSubModule "../datacenter/02-packer/06-proxmox-ubuntu-22-04-server-std-k3s/packer/clone/" "clone"
+updatingSubModule "../datacenter/02-packer/10-proxmox-ubuntu-server-raw/packer/iso/" "iso"
+updatingSubModule "../datacenter/02-packer/11-proxmox-ubuntu-server-standard/packer/clone/" "clone"
+updatingSubModule "../datacenter/02-packer/12-proxmox-ubuntu-server-std-docker/packer/clone/" "clone"
 
-updatingSubModule "../datacenter/02-packer/07-proxmox-ubuntu-22-04-desktop-raw/packer/clone/" "clone"
-updatingSubModule "../datacenter/02-packer/08-proxmox-ubuntu-22-04-desktop-standard/packer/clone/" "clone"
+updatingSubModule "../datacenter/02-packer/20-proxmox-ubuntu-desktop-raw/packer/clone/" "clone"
+updatingSubModule "../datacenter/02-packer/21-proxmox-ubuntu-desktop-standard/packer/clone/" "clone"
