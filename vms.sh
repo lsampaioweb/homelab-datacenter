@@ -21,5 +21,4 @@ runningTerraformApply "../datacenter/06-projects/04-load-balancer/terraform/" $1
 runningTerraformApply "../datacenter/06-projects/06-dhcp/terraform/" $1
 runningTerraformApply "../datacenter/06-projects/07-dns/terraform/" $1
 runningTerraformApply "../datacenter/06-projects/08-ntp/terraform/" $1
-
 }
