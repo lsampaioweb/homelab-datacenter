@@ -1,0 +1,313 @@
+Running 10-proxmox-ubuntu-server-raw/packer/ with commands: [build home]
+credentials.file.password: output will be in this color.
+
+==> credentials.file.password: Running local shell script: /tmp/packer-shell361488976
+Build 'credentials.file.password' finished after 140 milliseconds 545 microseconds.
+
+==> Wait completed after 140 milliseconds 660 microseconds
+
+==> Builds finished. The artifacts of successful builds are:
+--> credentials.file.password: Stored file: /home/lsampaio/git/datacenter/02-packer/10-proxmox-ubuntu-server-raw/packer/iso/autoinstall/tmp/.random-password
+build.proxmox-iso.template: output will be in this color.
+
+==> build.proxmox-iso.template: Creating VM
+==> build.proxmox-iso.template: Starting VM
+==> build.proxmox-iso.template: Starting HTTP server on port 8172
+==> build.proxmox-iso.template: Waiting 5s for boot
+==> build.proxmox-iso.template: Typing the boot command
+==> build.proxmox-iso.template: Waiting for SSH to become available...
+==> build.proxmox-iso.template: Connected to SSH!
+==> build.proxmox-iso.template: Provisioning with Ansible...
+    build.proxmox-iso.template: Setting up proxy adapter for Ansible....
+==> build.proxmox-iso.template: Executing Ansible: ansible-playbook -e packer_build_name="template" -e packer_builder_type=proxmox-iso -e packer_http_addr=192.168.101.2:8172 --ssh-extra-args '-o IdentitiesOnly=yes' --extra-vars password_id=***** -e ansible_ssh_private_key_file=/tmp/ansible-key3816841808 -i /tmp/packer-provisioner-ansible2887140630 /home/lsampaio/git/datacenter/02-packer/10-proxmox-ubuntu-server-raw/ansible/template.yml
+    build.proxmox-iso.template:
+    build.proxmox-iso.template: PLAY [Preparing the template with the minimum settings] ************************
+    build.proxmox-iso.template:
+    build.proxmox-iso.template: TASK [Gathering Facts] *********************************************************
+    build.proxmox-iso.template: Thursday 01 May 2025  16:40:41 -0300 (0:00:00.076)       0:00:00.076 **********
+    build.proxmox-iso.template: ok: [default]
+    build.proxmox-iso.template:
+    build.proxmox-iso.template: TASK [template : Copying certificate to host] **********************************
+    build.proxmox-iso.template: Thursday 01 May 2025  16:40:43 -0300 (0:00:02.270)       0:00:02.347 **********
+    build.proxmox-iso.template: changed: [default]
+    build.proxmox-iso.template:
+    build.proxmox-iso.template: TASK [template : Editing the known_hosts file to trust servers with SSH keys signed by the Certificate Authority (CA) OpenSSH keypair] ***
+    build.proxmox-iso.template: Thursday 01 May 2025  16:40:44 -0300 (0:00:00.974)       0:00:03.321 **********
+    build.proxmox-iso.template: changed: [default]
+    build.proxmox-iso.template:
+    build.proxmox-iso.template: TASK [template : Force all notified handlers to run at this point, not waiting for normal sync points] ***
+    build.proxmox-iso.template: Thursday 01 May 2025  16:40:44 -0300 (0:00:00.502)       0:00:03.824 **********
+    build.proxmox-iso.template:
+    build.proxmox-iso.template: RUNNING HANDLER [common : Update CA Certificates] ******************************
+    build.proxmox-iso.template: Thursday 01 May 2025  16:40:44 -0300 (0:00:00.013)       0:00:03.838 **********
+    build.proxmox-iso.template: changed: [default]
+    build.proxmox-iso.template:
+    build.proxmox-iso.template: RUNNING HANDLER [common : Restarting the SSH server] ***************************
+    build.proxmox-iso.template: Thursday 01 May 2025  16:40:46 -0300 (0:00:01.416)       0:00:05.254 **********
+    build.proxmox-iso.template: changed: [default]
+    build.proxmox-iso.template:
+    build.proxmox-iso.template: TASK [template : Setting timezone to America/Maceio] ***************************
+    build.proxmox-iso.template: Thursday 01 May 2025  16:40:48 -0300 (0:00:01.921)       0:00:07.176 **********
+    build.proxmox-iso.template: changed: [default]
+    build.proxmox-iso.template:
+    build.proxmox-iso.template: TASK [template : Setting up NTP Servers - Timesyncd] ***************************
+    build.proxmox-iso.template: Thursday 01 May 2025  16:40:48 -0300 (0:00:00.563)       0:00:07.740 **********
+    build.proxmox-iso.template: changed: [default]
+    build.proxmox-iso.template:
+    build.proxmox-iso.template: TASK [template : Setting up NTP Servers - Chronyd] *****************************
+    build.proxmox-iso.template: Thursday 01 May 2025  16:40:49 -0300 (0:00:00.452)       0:00:08.192 **********
+    build.proxmox-iso.template: skipping: [default] => (item=ntp-pool.lan.homelab)
+    build.proxmox-iso.template: skipping: [default]
+    build.proxmox-iso.template:
+    build.proxmox-iso.template: TASK [template : Copying the disable IPV6 config file to the server] ***********
+    build.proxmox-iso.template: Thursday 01 May 2025  16:40:49 -0300 (0:00:00.069)       0:00:08.261 **********
+    build.proxmox-iso.template: changed: [default]
+    build.proxmox-iso.template:
+    build.proxmox-iso.template: TASK [template : Removing all IPV6 references from the /etc/hosts file] ********
+    build.proxmox-iso.template: Thursday 01 May 2025  16:40:50 -0300 (0:00:00.638)       0:00:08.899 **********
+    build.proxmox-iso.template: changed: [default]
+    build.proxmox-iso.template:
+    build.proxmox-iso.template: TASK [template : Populating the service facts] *********************************
+    build.proxmox-iso.template: Thursday 01 May 2025  16:40:50 -0300 (0:00:00.505)       0:00:09.405 **********
+    build.proxmox-iso.template: ok: [default]
+    build.proxmox-iso.template:
+    build.proxmox-iso.template: TASK [template : Disabling IPV6 with network manager] **************************
+    build.proxmox-iso.template: Thursday 01 May 2025  16:40:54 -0300 (0:00:03.469)       0:00:12.875 **********
+    build.proxmox-iso.template: skipping: [default]
+    build.proxmox-iso.template:
+    build.proxmox-iso.template: TASK [template : Waiting for cloud-init / user-data to finish] *****************
+    build.proxmox-iso.template: Thursday 01 May 2025  16:40:54 -0300 (0:00:00.051)       0:00:12.926 **********
+    build.proxmox-iso.template: ok: [default]
+    build.proxmox-iso.template:
+    build.proxmox-iso.template: TASK [template : Ensure no other package operations are running] ***************
+    build.proxmox-iso.template: Thursday 01 May 2025  16:40:54 -0300 (0:00:00.690)       0:00:13.616 **********
+    build.proxmox-iso.template: ok: [default]
+    build.proxmox-iso.template:
+    build.proxmox-iso.template: TASK [template : Removing apt lock files] **************************************
+    build.proxmox-iso.template: Thursday 01 May 2025  16:40:55 -0300 (0:00:00.376)       0:00:13.992 **********
+    build.proxmox-iso.template: changed: [default] => (item=/var/lib/dpkg/lock)
+    build.proxmox-iso.template: changed: [default] => (item=/var/lib/dpkg/lock-frontend)
+    build.proxmox-iso.template:
+    build.proxmox-iso.template: TASK [template : Upgrading the packages] ***************************************
+    build.proxmox-iso.template: Thursday 01 May 2025  16:40:56 -0300 (0:00:00.888)       0:00:14.881 **********
+    build.proxmox-iso.template: changed: [default]
+    build.proxmox-iso.template:
+    build.proxmox-iso.template: TASK [template : Apt packages] *************************************************
+    build.proxmox-iso.template: Thursday 01 May 2025  16:42:51 -0300 (0:01:55.427)       0:02:10.308 **********
+    build.proxmox-iso.template: ok: [default] => (item={'name': 'sudo'})
+    build.proxmox-iso.template: ok: [default] => (item={'name': 'qemu-guest-agent'})
+    build.proxmox-iso.template: ok: [default] => (item={'name': 'openssh-server'})
+    build.proxmox-iso.template: ok: [default] => (item={'name': 'cloud-init'})
+    build.proxmox-iso.template: changed: [default] => (item={'name': 'python-is-python3'})
+    build.proxmox-iso.template: changed: [default] => (item={'name': 'pipx'})
+    build.proxmox-iso.template: changed: [default] => (item={'name': 'python3-passlib'})
+    build.proxmox-iso.template: ok: [default] => (item={'name': 'python3-jmespath'})
+    build.proxmox-iso.template: ok: [default] => (item={'name': 'ubuntu-drivers-common'})
+    build.proxmox-iso.template:
+    build.proxmox-iso.template: TASK [template : Manually upgrading any left over packages] ********************
+    build.proxmox-iso.template: Thursday 01 May 2025  16:43:19 -0300 (0:00:27.550)       0:02:37.859 **********
+    build.proxmox-iso.template: skipping: [default]
+    build.proxmox-iso.template:
+    build.proxmox-iso.template: TASK [template : Removing dependencies that are no longer required and unnecessary packages from the cache] ***
+    build.proxmox-iso.template: Thursday 01 May 2025  16:43:19 -0300 (0:00:00.077)       0:02:37.937 **********
+    build.proxmox-iso.template: skipping: [default]
+    build.proxmox-iso.template:
+    build.proxmox-iso.template: TASK [template : Force all notified handlers to run at this point, not waiting for normal sync points] ***
+    build.proxmox-iso.template: Thursday 01 May 2025  16:43:19 -0300 (0:00:00.070)       0:02:38.008 **********
+    build.proxmox-iso.template:
+    build.proxmox-iso.template: RUNNING HANDLER [common : Reconfigure Timezone] ********************************
+    build.proxmox-iso.template: Thursday 01 May 2025  16:43:19 -0300 (0:00:00.022)       0:02:38.031 **********
+    build.proxmox-iso.template: changed: [default]
+    build.proxmox-iso.template:
+    build.proxmox-iso.template: RUNNING HANDLER [common : Restart Timesyncd] ***********************************
+    build.proxmox-iso.template: Thursday 01 May 2025  16:43:19 -0300 (0:00:00.633)       0:02:38.664 **********
+    build.proxmox-iso.template: changed: [default]
+    build.proxmox-iso.template:
+    build.proxmox-iso.template: RUNNING HANDLER [common : Refresh ~/.bashrc] ***********************************
+    build.proxmox-iso.template: Thursday 01 May 2025  16:43:20 -0300 (0:00:00.581)       0:02:39.246 **********
+    build.proxmox-iso.template: changed: [default]
+    build.proxmox-iso.template:
+    build.proxmox-iso.template: TASK [template : Copying SSH server configuration file] ************************
+    build.proxmox-iso.template: Thursday 01 May 2025  16:43:20 -0300 (0:00:00.349)       0:02:39.595 **********
+    build.proxmox-iso.template: changed: [default]
+    build.proxmox-iso.template:
+    build.proxmox-iso.template: TASK [template : Copying SSH client configuration file] ************************
+    build.proxmox-iso.template: Thursday 01 May 2025  16:43:21 -0300 (0:00:00.650)       0:02:40.246 **********
+    build.proxmox-iso.template: changed: [default]
+    build.proxmox-iso.template:
+    build.proxmox-iso.template: TASK [template : Creating the local account: local_admin] **********************
+    build.proxmox-iso.template: Thursday 01 May 2025  16:43:22 -0300 (0:00:00.666)       0:02:40.913 **********
+    build.proxmox-iso.template: changed: [default]
+    build.proxmox-iso.template:
+    build.proxmox-iso.template: TASK [template : Allowing the user to run any commands with sudo without the need to type its password] ***
+    build.proxmox-iso.template: Thursday 01 May 2025  16:43:24 -0300 (0:00:01.960)       0:02:42.873 **********
+    build.proxmox-iso.template: changed: [default]
+    build.proxmox-iso.template:
+    build.proxmox-iso.template: TASK [template : Copying cloud-init datasource to the target host] *************
+    build.proxmox-iso.template: Thursday 01 May 2025  16:43:24 -0300 (0:00:00.518)       0:02:43.392 **********
+    build.proxmox-iso.template: changed: [default]
+    build.proxmox-iso.template:
+    build.proxmox-iso.template: TASK [template : Copying CPU hotplug rule to the target host] ******************
+    build.proxmox-iso.template: Thursday 01 May 2025  16:43:25 -0300 (0:00:00.637)       0:02:44.029 **********
+    build.proxmox-iso.template: changed: [default]
+    build.proxmox-iso.template:
+    build.proxmox-iso.template: TASK [template : Waiting for cloud-init / user-data to finish] *****************
+    build.proxmox-iso.template: Thursday 01 May 2025  16:43:25 -0300 (0:00:00.676)       0:02:44.706 **********
+    build.proxmox-iso.template: ok: [default]
+    build.proxmox-iso.template:
+    build.proxmox-iso.template: TASK [template : Ensure no other package operations are running] ***************
+    build.proxmox-iso.template: Thursday 01 May 2025  16:43:26 -0300 (0:00:00.716)       0:02:45.422 **********
+    build.proxmox-iso.template: ok: [default]
+    build.proxmox-iso.template:
+    build.proxmox-iso.template: TASK [template : Removing apt lock files] **************************************
+    build.proxmox-iso.template: Thursday 01 May 2025  16:43:26 -0300 (0:00:00.376)       0:02:45.798 **********
+    build.proxmox-iso.template: changed: [default] => (item=/var/lib/dpkg/lock)
+    build.proxmox-iso.template: changed: [default] => (item=/var/lib/dpkg/lock-frontend)
+    build.proxmox-iso.template:
+    build.proxmox-iso.template: TASK [template : Upgrading the packages] ***************************************
+    build.proxmox-iso.template: Thursday 01 May 2025  16:43:27 -0300 (0:00:00.679)       0:02:46.478 **********
+    build.proxmox-iso.template: skipping: [default]
+    build.proxmox-iso.template:
+    build.proxmox-iso.template: TASK [template : Apt packages] *************************************************
+    build.proxmox-iso.template: Thursday 01 May 2025  16:43:27 -0300 (0:00:00.079)       0:02:46.557 **********
+    build.proxmox-iso.template: changed: [default] => (item={'name': 'unattended-upgrades', 'state': 'absent'})
+    build.proxmox-iso.template:
+    build.proxmox-iso.template: TASK [template : Manually upgrading any left over packages] ********************
+    build.proxmox-iso.template: Thursday 01 May 2025  16:43:32 -0300 (0:00:04.453)       0:02:51.011 **********
+    build.proxmox-iso.template: skipping: [default]
+    build.proxmox-iso.template:
+    build.proxmox-iso.template: TASK [template : Removing dependencies that are no longer required and unnecessary packages from the cache] ***
+    build.proxmox-iso.template: Thursday 01 May 2025  16:43:32 -0300 (0:00:00.072)       0:02:51.084 **********
+    build.proxmox-iso.template: skipping: [default]
+    build.proxmox-iso.template:
+    build.proxmox-iso.template: TASK [template : Waiting for cloud-init / user-data to finish] *****************
+    build.proxmox-iso.template: Thursday 01 May 2025  16:43:32 -0300 (0:00:00.072)       0:02:51.156 **********
+    build.proxmox-iso.template: ok: [default]
+    build.proxmox-iso.template:
+    build.proxmox-iso.template: TASK [template : Ensure no other package operations are running] ***************
+    build.proxmox-iso.template: Thursday 01 May 2025  16:43:33 -0300 (0:00:00.709)       0:02:51.866 **********
+    build.proxmox-iso.template: ok: [default]
+    build.proxmox-iso.template:
+    build.proxmox-iso.template: TASK [template : Removing apt lock files] **************************************
+    build.proxmox-iso.template: Thursday 01 May 2025  16:43:33 -0300 (0:00:00.374)       0:02:52.240 **********
+    build.proxmox-iso.template: changed: [default] => (item=/var/lib/dpkg/lock)
+    build.proxmox-iso.template: changed: [default] => (item=/var/lib/dpkg/lock-frontend)
+    build.proxmox-iso.template:
+    build.proxmox-iso.template: TASK [template : Upgrading the packages] ***************************************
+    build.proxmox-iso.template: Thursday 01 May 2025  16:43:34 -0300 (0:00:00.690)       0:02:52.931 **********
+    build.proxmox-iso.template: skipping: [default]
+    build.proxmox-iso.template:
+    build.proxmox-iso.template: TASK [template : Apt packages] *************************************************
+    build.proxmox-iso.template: Thursday 01 May 2025  16:43:34 -0300 (0:00:00.070)       0:02:53.001 **********
+    build.proxmox-iso.template: skipping: [default]
+    build.proxmox-iso.template:
+    build.proxmox-iso.template: TASK [template : Manually upgrading any left over packages] ********************
+    build.proxmox-iso.template: Thursday 01 May 2025  16:43:34 -0300 (0:00:00.146)       0:02:53.148 **********
+    build.proxmox-iso.template: skipping: [default]
+    build.proxmox-iso.template:
+    build.proxmox-iso.template: TASK [template : Removing dependencies that are no longer required and unnecessary packages from the cache] ***
+    build.proxmox-iso.template: Thursday 01 May 2025  16:43:34 -0300 (0:00:00.073)       0:02:53.221 **********
+    build.proxmox-iso.template: ok: [default]
+    build.proxmox-iso.template:
+    build.proxmox-iso.template: TASK [template : Removing the machine-id file] *********************************
+    build.proxmox-iso.template: Thursday 01 May 2025  16:43:35 -0300 (0:00:01.059)       0:02:54.280 **********
+    build.proxmox-iso.template: changed: [default] => (item=/etc/machine-id)
+    build.proxmox-iso.template: changed: [default] => (item=/var/lib/dbus/machine-id)
+    build.proxmox-iso.template:
+    build.proxmox-iso.template: TASK [template : Creating the machine-id file] *********************************
+    build.proxmox-iso.template: Thursday 01 May 2025  16:43:36 -0300 (0:00:00.703)       0:02:54.984 **********
+    build.proxmox-iso.template: changed: [default]
+    build.proxmox-iso.template:
+    build.proxmox-iso.template: TASK [template : Searching for log and temp files that can be removed] *********
+    build.proxmox-iso.template: Thursday 01 May 2025  16:43:36 -0300 (0:00:00.363)       0:02:55.347 **********
+    build.proxmox-iso.template: ok: [default]
+    build.proxmox-iso.template:
+    build.proxmox-iso.template: TASK [template : Removing unnecessary files] ***********************************
+    build.proxmox-iso.template: Thursday 01 May 2025  16:43:37 -0300 (0:00:00.523)       0:02:55.870 **********
+    build.proxmox-iso.template: changed: [default] => (item=0 - /var/log/apt/eipp.log.xz)
+    build.proxmox-iso.template: changed: [default] => (item=1 - /var/log/installer/subiquity-server-info.log.1884)
+    build.proxmox-iso.template: changed: [default] => (item=2 - /var/log/installer/subiquity-server-debug.log.1884)
+    build.proxmox-iso.template: changed: [default] => (item=3 - /var/log/installer/subiquity-client-info.log.1829)
+    build.proxmox-iso.template: changed: [default] => (item=4 - /var/log/installer/subiquity-client-debug.log.1829)
+    build.proxmox-iso.template:
+    build.proxmox-iso.template: TASK [template : Cleaning cloud-init] ******************************************
+    build.proxmox-iso.template: Thursday 01 May 2025  16:43:38 -0300 (0:00:01.698)       0:02:57.568 **********
+    build.proxmox-iso.template: changed: [default]
+    build.proxmox-iso.template:
+    build.proxmox-iso.template: TASK [template : Removing the history of terminal commands] ********************
+    build.proxmox-iso.template: Thursday 01 May 2025  16:43:40 -0300 (0:00:01.333)       0:02:58.902 **********
+    build.proxmox-iso.template: changed: [default]
+    build.proxmox-iso.template:
+    build.proxmox-iso.template: RUNNING HANDLER [common : Restarting the SSH server] ***************************
+    build.proxmox-iso.template: Thursday 01 May 2025  16:43:40 -0300 (0:00:00.396)       0:02:59.299 **********
+    build.proxmox-iso.template: changed: [default]
+    build.proxmox-iso.template:
+    build.proxmox-iso.template: PLAY RECAP *********************************************************************
+    build.proxmox-iso.template: default                    : ok=39   changed=29   unreachable=0    failed=0    skipped=10   rescued=0    ignored=0
+    build.proxmox-iso.template:
+    build.proxmox-iso.template: Playbook run took 0 days, 0 hours, 2 minutes, 59 seconds
+    build.proxmox-iso.template: Thursday 01 May 2025  16:43:41 -0300 (0:00:00.600)       0:02:59.900 **********
+    build.proxmox-iso.template: ===============================================================================
+    build.proxmox-iso.template: template -------------------------------------------------------------- 172.05s
+    build.proxmox-iso.template: common ------------------------------------------------------------------ 5.50s
+    build.proxmox-iso.template: gather_facts ------------------------------------------------------------ 2.27s
+    build.proxmox-iso.template: ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    build.proxmox-iso.template: total ----------------------------------------------------------------- 179.82s
+==> build.proxmox-iso.template: Stopping VM
+==> build.proxmox-iso.template: Converting VM to template
+==> build.proxmox-iso.template: Adding a cloud-init cdrom in storage pool Ceph_Gold
+Build 'build.proxmox-iso.template' finished after 12 minutes 14 seconds.
+
+==> Wait completed after 12 minutes 14 seconds
+
+==> Builds finished. The artifacts of successful builds are:
+--> build.proxmox-iso.template: A template was created: 900
+post-config.null.extra-config: output will be in this color.
+
+==> post-config.null.extra-config: Provisioning with Ansible...
+    post-config.null.extra-config: Setting up proxy adapter for Ansible....
+==> post-config.null.extra-config: Executing Ansible: ansible-playbook -e packer_build_name="extra-config" -e packer_builder_type=null --extra-vars node='edge-pve-02' vm_name='ubuntu-24-04-server-raw' cpu_type='x86-64-v2-AES' hotplug='disk,network,cpu' -e ansible_ssh_private_key_file=/tmp/ansible-key2507255080 -i /home/lsampaio/git/datacenter/02-packer/10-proxmox-ubuntu-server-raw/packer/../ansible/inventory/hosts /home/lsampaio/git/datacenter/02-packer/10-proxmox-ubuntu-server-raw/ansible/kvm_setup.yml
+    post-config.null.extra-config:
+    post-config.null.extra-config: PLAY [Setting some extra configurations directly on the Proxmox node] **********
+    post-config.null.extra-config:
+    post-config.null.extra-config: TASK [Gathering Facts] *********************************************************
+    post-config.null.extra-config: Thursday 01 May 2025  16:43:55 -0300 (0:00:00.017)       0:00:00.018 **********
+    post-config.null.extra-config: ok: [edge-pve-02]
+    post-config.null.extra-config:
+    post-config.null.extra-config: TASK [kvm_setup : Getting VM ID by name] ***************************************
+    post-config.null.extra-config: Thursday 01 May 2025  16:43:57 -0300 (0:00:02.044)       0:00:02.062 **********
+    post-config.null.extra-config: ok: [edge-pve-02]
+    post-config.null.extra-config:
+    post-config.null.extra-config: TASK [kvm_setup : Set vm_id fact] **********************************************
+    post-config.null.extra-config: Thursday 01 May 2025  16:43:58 -0300 (0:00:01.212)       0:00:03.274 **********
+    post-config.null.extra-config: ok: [edge-pve-02]
+    post-config.null.extra-config:
+    post-config.null.extra-config: TASK [kvm_setup : Setting CPU Type] ********************************************
+    post-config.null.extra-config: Thursday 01 May 2025  16:43:58 -0300 (0:00:00.124)       0:00:03.398 **********
+    post-config.null.extra-config: changed: [edge-pve-02]
+    post-config.null.extra-config:
+    post-config.null.extra-config: TASK [kvm_setup : Setting DHCP] ************************************************
+    post-config.null.extra-config: Thursday 01 May 2025  16:43:59 -0300 (0:00:01.077)       0:00:04.476 **********
+    post-config.null.extra-config: changed: [edge-pve-02]
+    post-config.null.extra-config:
+    post-config.null.extra-config: TASK [kvm_setup : Setting Hardware HotPlug] ************************************
+    post-config.null.extra-config: Thursday 01 May 2025  16:44:00 -0300 (0:00:01.038)       0:00:05.514 **********
+    post-config.null.extra-config: changed: [edge-pve-02]
+    post-config.null.extra-config:
+    post-config.null.extra-config: PLAY RECAP *********************************************************************
+    post-config.null.extra-config: edge-pve-02                : ok=6    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+    post-config.null.extra-config:
+    post-config.null.extra-config: Playbook run took 0 days, 0 hours, 0 minutes, 6 seconds
+    post-config.null.extra-config: Thursday 01 May 2025  16:44:01 -0300 (0:00:01.075)       0:00:06.589 **********
+    post-config.null.extra-config: ===============================================================================
+    post-config.null.extra-config: kvm_setup --------------------------------------------------------------- 4.53s
+    post-config.null.extra-config: gather_facts ------------------------------------------------------------ 2.04s
+    post-config.null.extra-config: ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    post-config.null.extra-config: total ------------------------------------------------------------------- 6.57s
+Build 'post-config.null.extra-config' finished after 7 seconds 804 milliseconds.
+
+==> Wait completed after 7 seconds 804 milliseconds
+
+==> Builds finished. The artifacts of successful builds are:
+--> post-config.null.extra-config: Did not export anything. This is the null builder
+Finished 10-proxmox-ubuntu-server-raw/packer/

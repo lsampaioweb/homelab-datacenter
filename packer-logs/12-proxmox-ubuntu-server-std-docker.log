@@ -1,0 +1,246 @@
+Running 12-proxmox-ubuntu-server-std-docker/packer/ with commands: [build home]
+credentials.null.password: output will be in this color.
+
+==> credentials.null.password: Running local shell script: /tmp/packer-shell602656745
+Build 'credentials.null.password' finished after 102 milliseconds 534 microseconds.
+
+==> Wait completed after 102 milliseconds 614 microseconds
+
+==> Builds finished. The artifacts of successful builds are:
+--> credentials.null.password: Did not export anything. This is the null builder
+build.proxmox-clone.template: output will be in this color.
+
+==> build.proxmox-clone.template: Creating ephemeral key pair for SSH communicator...
+==> build.proxmox-clone.template: Created ephemeral SSH key pair for communicator
+==> build.proxmox-clone.template: Creating VM
+==> build.proxmox-clone.template: Starting VM
+==> build.proxmox-clone.template: Waiting for SSH to become available...
+==> build.proxmox-clone.template: Connected to SSH!
+==> build.proxmox-clone.template: Provisioning with Ansible...
+    build.proxmox-clone.template: Setting up proxy adapter for Ansible....
+==> build.proxmox-clone.template: Executing Ansible: ansible-playbook -e packer_build_name="template" -e packer_builder_type=proxmox-clone --ssh-extra-args '-o IdentitiesOnly=yes' --extra-vars hostname='ubuntu-24-04-server-std-docker' -e ansible_ssh_private_key_file=/tmp/ansible-key3176023984 -i /tmp/packer-provisioner-ansible3434316 /home/lsampaio/git/datacenter/02-packer/12-proxmox-ubuntu-server-std-docker/ansible/template.yml
+    build.proxmox-clone.template:
+    build.proxmox-clone.template: PLAY [Preparing the template with Docker application] **************************
+    build.proxmox-clone.template:
+    build.proxmox-clone.template: TASK [Gathering Facts] *********************************************************
+    build.proxmox-clone.template: Thursday 01 May 2025  16:50:38 -0300 (0:00:00.035)       0:00:00.035 **********
+    build.proxmox-clone.template: ok: [default]
+    build.proxmox-clone.template:
+    build.proxmox-clone.template: TASK [template : Setting the name of the server] *******************************
+    build.proxmox-clone.template: Thursday 01 May 2025  16:50:39 -0300 (0:00:01.755)       0:00:01.791 **********
+    build.proxmox-clone.template: ok: [default]
+    build.proxmox-clone.template:
+    build.proxmox-clone.template: TASK [template : Setting the localhost name of the server] *********************
+    build.proxmox-clone.template: Thursday 01 May 2025  16:50:40 -0300 (0:00:00.876)       0:00:02.668 **********
+    build.proxmox-clone.template: ok: [default]
+    build.proxmox-clone.template:
+    build.proxmox-clone.template: TASK [template : Waiting for cloud-init / user-data to finish] *****************
+    build.proxmox-clone.template: Thursday 01 May 2025  16:50:41 -0300 (0:00:00.496)       0:00:03.164 **********
+    build.proxmox-clone.template: ok: [default]
+    build.proxmox-clone.template:
+    build.proxmox-clone.template: TASK [template : Ensure no other package operations are running] ***************
+    build.proxmox-clone.template: Thursday 01 May 2025  16:50:42 -0300 (0:00:00.871)       0:00:04.036 **********
+    build.proxmox-clone.template: ok: [default]
+    build.proxmox-clone.template:
+    build.proxmox-clone.template: TASK [template : Removing apt lock files] **************************************
+    build.proxmox-clone.template: Thursday 01 May 2025  16:50:42 -0300 (0:00:00.382)       0:00:04.419 **********
+    build.proxmox-clone.template: changed: [default] => (item=/var/lib/dpkg/lock)
+    build.proxmox-clone.template: changed: [default] => (item=/var/lib/dpkg/lock-frontend)
+    build.proxmox-clone.template:
+    build.proxmox-clone.template: TASK [template : Upgrading the packages] ***************************************
+    build.proxmox-clone.template: Thursday 01 May 2025  16:50:43 -0300 (0:00:00.864)       0:00:05.283 **********
+    build.proxmox-clone.template: ok: [default]
+    build.proxmox-clone.template:
+    build.proxmox-clone.template: TASK [template : Apt packages] *************************************************
+    build.proxmox-clone.template: Thursday 01 May 2025  16:50:47 -0300 (0:00:03.749)       0:00:09.032 **********
+    build.proxmox-clone.template: changed: [default] => (item={'name': 'apt-transport-https'})
+    build.proxmox-clone.template: ok: [default] => (item={'name': 'ca-certificates'})
+    build.proxmox-clone.template: ok: [default] => (item={'name': 'curl'})
+    build.proxmox-clone.template: ok: [default] => (item={'name': 'software-properties-common'})
+    build.proxmox-clone.template:
+    build.proxmox-clone.template: TASK [template : Manually upgrading any left over packages] ********************
+    build.proxmox-clone.template: Thursday 01 May 2025  16:50:55 -0300 (0:00:08.081)       0:00:17.113 **********
+    build.proxmox-clone.template: skipping: [default]
+    build.proxmox-clone.template:
+    build.proxmox-clone.template: TASK [template : Removing dependencies that are no longer required and unnecessary packages from the cache] ***
+    build.proxmox-clone.template: Thursday 01 May 2025  16:50:55 -0300 (0:00:00.066)       0:00:17.180 **********
+    build.proxmox-clone.template: skipping: [default]
+    build.proxmox-clone.template:
+    build.proxmox-clone.template: TASK [template : Adding Docker signing key] ************************************
+    build.proxmox-clone.template: Thursday 01 May 2025  16:50:55 -0300 (0:00:00.064)       0:00:17.244 **********
+    build.proxmox-clone.template: changed: [default]
+    build.proxmox-clone.template:
+    build.proxmox-clone.template: TASK [template : Adding repository into sources list] **************************
+    build.proxmox-clone.template: Thursday 01 May 2025  16:50:56 -0300 (0:00:01.078)       0:00:18.323 **********
+    build.proxmox-clone.template: changed: [default]
+    build.proxmox-clone.template:
+    build.proxmox-clone.template: TASK [template : Waiting for cloud-init / user-data to finish] *****************
+    build.proxmox-clone.template: Thursday 01 May 2025  16:51:01 -0300 (0:00:05.340)       0:00:23.663 **********
+    build.proxmox-clone.template: ok: [default]
+    build.proxmox-clone.template:
+    build.proxmox-clone.template: TASK [template : Ensure no other package operations are running] ***************
+    build.proxmox-clone.template: Thursday 01 May 2025  16:51:02 -0300 (0:00:00.675)       0:00:24.338 **********
+    build.proxmox-clone.template: ok: [default]
+    build.proxmox-clone.template:
+    build.proxmox-clone.template: TASK [template : Removing apt lock files] **************************************
+    build.proxmox-clone.template: Thursday 01 May 2025  16:51:02 -0300 (0:00:00.367)       0:00:24.705 **********
+    build.proxmox-clone.template: changed: [default] => (item=/var/lib/dpkg/lock)
+    build.proxmox-clone.template: changed: [default] => (item=/var/lib/dpkg/lock-frontend)
+    build.proxmox-clone.template:
+    build.proxmox-clone.template: TASK [template : Upgrading the packages] ***************************************
+    build.proxmox-clone.template: Thursday 01 May 2025  16:51:03 -0300 (0:00:00.689)       0:00:25.395 **********
+    build.proxmox-clone.template: skipping: [default]
+    build.proxmox-clone.template:
+    build.proxmox-clone.template: TASK [template : Apt packages] *************************************************
+    build.proxmox-clone.template: Thursday 01 May 2025  16:51:03 -0300 (0:00:00.068)       0:00:25.463 **********
+    build.proxmox-clone.template: changed: [default] => (item={'name': 'docker-ce', 'install_recommends': True})
+    build.proxmox-clone.template: ok: [default] => (item={'name': 'docker-ce-cli'})
+    build.proxmox-clone.template: ok: [default] => (item={'name': 'containerd.io'})
+    build.proxmox-clone.template: ok: [default] => (item={'name': 'docker-buildx-plugin'})
+    build.proxmox-clone.template: ok: [default] => (item={'name': 'docker-compose-plugin', 'autoremove': True, 'autoclean': True})
+    build.proxmox-clone.template: changed: [default] => (item={'name': 'docker-registry'})
+    build.proxmox-clone.template:
+    build.proxmox-clone.template: TASK [template : Manually upgrading any left over packages] ********************
+    build.proxmox-clone.template: Thursday 01 May 2025  16:51:36 -0300 (0:00:33.332)       0:00:58.796 **********
+    build.proxmox-clone.template: skipping: [default]
+    build.proxmox-clone.template:
+    build.proxmox-clone.template: TASK [template : Removing dependencies that are no longer required and unnecessary packages from the cache] ***
+    build.proxmox-clone.template: Thursday 01 May 2025  16:51:36 -0300 (0:00:00.067)       0:00:58.864 **********
+    build.proxmox-clone.template: skipping: [default]
+    build.proxmox-clone.template:
+    build.proxmox-clone.template: TASK [template : Force all notified handlers to run at this point, not waiting for normal sync points] ***
+    build.proxmox-clone.template: Thursday 01 May 2025  16:51:36 -0300 (0:00:00.064)       0:00:58.928 **********
+    build.proxmox-clone.template:
+    build.proxmox-clone.template: RUNNING HANDLER [common : Restarting and Enabling docker] **********************
+    build.proxmox-clone.template: Thursday 01 May 2025  16:51:37 -0300 (0:00:00.013)       0:00:58.942 **********
+    build.proxmox-clone.template: changed: [default]
+    build.proxmox-clone.template:
+    build.proxmox-clone.template: TASK [template : Adding the user into the 'docker' group - usr_packer] *********
+    build.proxmox-clone.template: Thursday 01 May 2025  16:51:39 -0300 (0:00:02.256)       0:01:01.198 **********
+    build.proxmox-clone.template: changed: [default]
+    build.proxmox-clone.template:
+    build.proxmox-clone.template: TASK [template : Waiting for cloud-init / user-data to finish] *****************
+    build.proxmox-clone.template: Thursday 01 May 2025  16:51:40 -0300 (0:00:00.824)       0:01:02.023 **********
+    build.proxmox-clone.template: ok: [default]
+    build.proxmox-clone.template:
+    build.proxmox-clone.template: TASK [template : Ensure no other package operations are running] ***************
+    build.proxmox-clone.template: Thursday 01 May 2025  16:51:40 -0300 (0:00:00.677)       0:01:02.700 **********
+    build.proxmox-clone.template: ok: [default]
+    build.proxmox-clone.template:
+    build.proxmox-clone.template: TASK [template : Removing apt lock files] **************************************
+    build.proxmox-clone.template: Thursday 01 May 2025  16:51:41 -0300 (0:00:00.372)       0:01:03.073 **********
+    build.proxmox-clone.template: changed: [default] => (item=/var/lib/dpkg/lock)
+    build.proxmox-clone.template: changed: [default] => (item=/var/lib/dpkg/lock-frontend)
+    build.proxmox-clone.template:
+    build.proxmox-clone.template: TASK [template : Upgrading the packages] ***************************************
+    build.proxmox-clone.template: Thursday 01 May 2025  16:51:41 -0300 (0:00:00.665)       0:01:03.738 **********
+    build.proxmox-clone.template: skipping: [default]
+    build.proxmox-clone.template:
+    build.proxmox-clone.template: TASK [template : Apt packages] *************************************************
+    build.proxmox-clone.template: Thursday 01 May 2025  16:51:41 -0300 (0:00:00.070)       0:01:03.809 **********
+    build.proxmox-clone.template: skipping: [default]
+    build.proxmox-clone.template:
+    build.proxmox-clone.template: TASK [template : Manually upgrading any left over packages] ********************
+    build.proxmox-clone.template: Thursday 01 May 2025  16:51:41 -0300 (0:00:00.059)       0:01:03.869 **********
+    build.proxmox-clone.template: skipping: [default]
+    build.proxmox-clone.template:
+    build.proxmox-clone.template: TASK [template : Removing dependencies that are no longer required and unnecessary packages from the cache] ***
+    build.proxmox-clone.template: Thursday 01 May 2025  16:51:42 -0300 (0:00:00.066)       0:01:03.935 **********
+    build.proxmox-clone.template: ok: [default]
+    build.proxmox-clone.template:
+    build.proxmox-clone.template: TASK [template : Removing the machine-id file] *********************************
+    build.proxmox-clone.template: Thursday 01 May 2025  16:51:43 -0300 (0:00:01.026)       0:01:04.962 **********
+    build.proxmox-clone.template: changed: [default] => (item=/etc/machine-id)
+    build.proxmox-clone.template: changed: [default] => (item=/var/lib/dbus/machine-id)
+    build.proxmox-clone.template:
+    build.proxmox-clone.template: TASK [template : Creating the machine-id file] *********************************
+    build.proxmox-clone.template: Thursday 01 May 2025  16:51:43 -0300 (0:00:00.672)       0:01:05.635 **********
+    build.proxmox-clone.template: changed: [default]
+    build.proxmox-clone.template:
+    build.proxmox-clone.template: TASK [template : Searching for log and temp files that can be removed] *********
+    build.proxmox-clone.template: Thursday 01 May 2025  16:51:44 -0300 (0:00:00.347)       0:01:05.982 **********
+    build.proxmox-clone.template: ok: [default]
+    build.proxmox-clone.template:
+    build.proxmox-clone.template: TASK [template : Removing unnecessary files] ***********************************
+    build.proxmox-clone.template: Thursday 01 May 2025  16:51:44 -0300 (0:00:00.511)       0:01:06.494 **********
+    build.proxmox-clone.template: changed: [default] => (item=0 - /var/log/dmesg.1.gz)
+    build.proxmox-clone.template: changed: [default] => (item=1 - /var/log/apt/eipp.log.xz)
+    build.proxmox-clone.template:
+    build.proxmox-clone.template: TASK [template : Cleaning cloud-init] ******************************************
+    build.proxmox-clone.template: Thursday 01 May 2025  16:51:45 -0300 (0:00:00.724)       0:01:07.218 **********
+    build.proxmox-clone.template: changed: [default]
+    build.proxmox-clone.template:
+    build.proxmox-clone.template: TASK [template : Removing the history of terminal commands] ********************
+    build.proxmox-clone.template: Thursday 01 May 2025  16:51:46 -0300 (0:00:01.058)       0:01:08.277 **********
+    build.proxmox-clone.template: changed: [default]
+    build.proxmox-clone.template:
+    build.proxmox-clone.template: PLAY RECAP *********************************************************************
+    build.proxmox-clone.template: default                    : ok=26   changed=14   unreachable=0    failed=0    skipped=8    rescued=0    ignored=0
+    build.proxmox-clone.template:
+    build.proxmox-clone.template: Playbook run took 0 days, 0 hours, 1 minutes, 8 seconds
+    build.proxmox-clone.template: Thursday 01 May 2025  16:51:46 -0300 (0:00:00.387)       0:01:08.664 **********
+    build.proxmox-clone.template: ===============================================================================
+    build.proxmox-clone.template: template --------------------------------------------------------------- 64.62s
+    build.proxmox-clone.template: common ------------------------------------------------------------------ 2.26s
+    build.proxmox-clone.template: gather_facts ------------------------------------------------------------ 1.76s
+    build.proxmox-clone.template: ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    build.proxmox-clone.template: total ------------------------------------------------------------------ 68.63s
+==> build.proxmox-clone.template: Trying to remove ephemeral keys from authorized_keys files
+==> build.proxmox-clone.template: Stopping VM
+==> build.proxmox-clone.template: Converting VM to template
+==> build.proxmox-clone.template: Adding a cloud-init cdrom in storage pool Ceph_Gold
+Build 'build.proxmox-clone.template' finished after 2 minutes 10 seconds.
+
+==> Wait completed after 2 minutes 10 seconds
+
+==> Builds finished. The artifacts of successful builds are:
+--> build.proxmox-clone.template: A template was created: 902
+post-config.null.extra-config: output will be in this color.
+
+==> post-config.null.extra-config: Provisioning with Ansible...
+    post-config.null.extra-config: Setting up proxy adapter for Ansible....
+==> post-config.null.extra-config: Executing Ansible: ansible-playbook -e packer_build_name="extra-config" -e packer_builder_type=null --extra-vars node='edge-pve-02' vm_name='ubuntu-24-04-server-std-docker' cpu_type='x86-64-v2-AES' hotplug='disk,network,cpu' -e ansible_ssh_private_key_file=/tmp/ansible-key2698777195 -i /home/lsampaio/git/datacenter/02-packer/12-proxmox-ubuntu-server-std-docker/packer/../ansible/inventory/hosts /home/lsampaio/git/datacenter/02-packer/12-proxmox-ubuntu-server-std-docker/ansible/kvm_setup.yml
+    post-config.null.extra-config:
+    post-config.null.extra-config: PLAY [Setting some extra configurations directly on the Proxmox node] **********
+    post-config.null.extra-config:
+    post-config.null.extra-config: TASK [Gathering Facts] *********************************************************
+    post-config.null.extra-config: Thursday 01 May 2025  16:52:02 -0300 (0:00:00.017)       0:00:00.017 **********
+    post-config.null.extra-config: ok: [edge-pve-02]
+    post-config.null.extra-config:
+    post-config.null.extra-config: TASK [kvm_setup : Getting VM ID by name] ***************************************
+    post-config.null.extra-config: Thursday 01 May 2025  16:52:04 -0300 (0:00:01.927)       0:00:01.944 **********
+    post-config.null.extra-config: ok: [edge-pve-02]
+    post-config.null.extra-config:
+    post-config.null.extra-config: TASK [kvm_setup : Set vm_id fact] **********************************************
+    post-config.null.extra-config: Thursday 01 May 2025  16:52:05 -0300 (0:00:01.224)       0:00:03.169 **********
+    post-config.null.extra-config: ok: [edge-pve-02]
+    post-config.null.extra-config:
+    post-config.null.extra-config: TASK [kvm_setup : Setting CPU Type] ********************************************
+    post-config.null.extra-config: Thursday 01 May 2025  16:52:05 -0300 (0:00:00.123)       0:00:03.292 **********
+    post-config.null.extra-config: changed: [edge-pve-02]
+    post-config.null.extra-config:
+    post-config.null.extra-config: TASK [kvm_setup : Setting DHCP] ************************************************
+    post-config.null.extra-config: Thursday 01 May 2025  16:52:06 -0300 (0:00:01.036)       0:00:04.329 **********
+    post-config.null.extra-config: changed: [edge-pve-02]
+    post-config.null.extra-config:
+    post-config.null.extra-config: TASK [kvm_setup : Setting Hardware HotPlug] ************************************
+    post-config.null.extra-config: Thursday 01 May 2025  16:52:07 -0300 (0:00:01.036)       0:00:05.366 **********
+    post-config.null.extra-config: changed: [edge-pve-02]
+    post-config.null.extra-config:
+    post-config.null.extra-config: PLAY RECAP *********************************************************************
+    post-config.null.extra-config: edge-pve-02                : ok=6    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+    post-config.null.extra-config:
+    post-config.null.extra-config: Playbook run took 0 days, 0 hours, 0 minutes, 6 seconds
+    post-config.null.extra-config: Thursday 01 May 2025  16:52:09 -0300 (0:00:01.095)       0:00:06.461 **********
+    post-config.null.extra-config: ===============================================================================
+    post-config.null.extra-config: kvm_setup --------------------------------------------------------------- 4.52s
+    post-config.null.extra-config: gather_facts ------------------------------------------------------------ 1.93s
+    post-config.null.extra-config: ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    post-config.null.extra-config: total ------------------------------------------------------------------- 6.44s
+Build 'post-config.null.extra-config' finished after 7 seconds 668 milliseconds.
+
+==> Wait completed after 7 seconds 668 milliseconds
+
+==> Builds finished. The artifacts of successful builds are:
+--> post-config.null.extra-config: Did not export anything. This is the null builder
+Finished 12-proxmox-ubuntu-server-std-docker/packer/
