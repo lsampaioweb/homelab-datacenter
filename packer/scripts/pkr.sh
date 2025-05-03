@@ -74,12 +74,3 @@ function createTemplates() {
 }
 
 createTemplates "$1" "$2"
-
-# # Run these commands on the node that has the template files.
-# : << 'MULTILINE-COMMENT'
-# qm destroy 911 --purge 1 --destroy-unreferenced-disks 1; \
-# qm destroy 910 --purge 1 --destroy-unreferenced-disks 1; \
-# qm destroy 902 --purge 1 --destroy-unreferenced-disks 1; \
-# qm destroy 901 --purge 1 --destroy-unreferenced-disks 1; \
-# qm destroy 900 --purge 1 --destroy-unreferenced-disks 1
-# MULTILINE-COMMENT
