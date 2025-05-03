@@ -1,15 +1,15 @@
-# Run on the kvm-07
+#!/bin/bash
+set -e # Abort if there is an issue with any build.
 
-: << 'MULTILINE-COMMENT'
-qm shutdown 109; \
-qm shutdown 108; \
-qm shutdown 107; \
-qm shutdown 106; \
-qm shutdown 105; \
-qm shutdown 104; \
-qm shutdown 103; \
-qm shutdown 102; \
-qm shutdown 101; \
-qm shutdown 100; \
-qm shutdown 1000;
-MULTILINE-COMMENT
+# Usage:
+# ./shutdown-vms.sh
+
+# Run these commands on the node that has the template files.
+# PVE-01
+qm shutdown 910
+qm shutdown 901
+
+# PVE-02
+qm shutdown 911
+qm shutdown 902
+qm shutdown 900

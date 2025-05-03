@@ -1,15 +1,15 @@
-# Run on the kvm-07
+#!/bin/bash
+set -e # Abort if there is an issue with any build.
 
-: << 'MULTILINE-COMMENT'
-qm start 100; \
-qm start 101; \
-qm start 102; \
-qm start 103; \
-qm start 104; \
-qm start 105; \
-qm start 106; \
-qm start 107; \
-qm start 108; \
-qm start 109; \
-qm start 1000 
-MULTILINE-COMMENT
+# Usage:
+# ./start-vms.sh
+
+# Run these commands on the node that has the template files.
+# PVE-01
+qm start 910
+qm start 901
+
+# PVE-02
+qm start 911
+qm start 902
+qm start 900
