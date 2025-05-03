@@ -2,75 +2,76 @@
 set -e # Abort if there is an issue with any build.
 
 # Usage:
-#   ./pkr.sh build home
+#   ./build-templates.sh [action] [environment]
+#   action defaults to "validate", environment defaults to "home".
 #   $1 -> validate, build.
 #   $2 -> home, homelab.
 
-# Store the absolute path of the initial directory.
-BASE_DIR="$(pwd)"
-
-# Absolute path for the logs directory.
-LOGS_DIR="$BASE_DIR/packer-logs"
-
-# Create logs directory if it doesn't exist.
-mkdir -p "$LOGS_DIR"
+# Source common functions and variables.
+. $(dirname "$0")/../../lib/common.sh
+. $(dirname "$0")/vars/variables.sh
 
 # Variable to store the PID of the current Packer process.
 packer_pid=""
 
+# Create logs directory with date if it doesn't exist.
+create_directory "$LOG_DIR"
+
+# Redirect output to both console and log file.
+exec 1> >(tee -a "$LOG_FILE")
+exec 2>&1
+
 # Function to handle SIGINT (Ctrl+C).
 cleanup() {
   if [ -n "$packer_pid" ]; then
-    echo "Caught interrupt, stopping Packer (PID: $packer_pid)..."
+    log_error "Caught interrupt, stopping Packer (PID: $packer_pid)..."
     kill -SIGINT "$packer_pid" 2>/dev/null
     wait "$packer_pid" 2>/dev/null
   fi
-  echo "Exiting..."
+  log_info "Exiting..."
   exit 1
 }
 
 # Set up trap to catch SIGINT.
 trap cleanup SIGINT
 
-runningPackerBuild() {
+run_packer_build() {
   local project_dir="$1"
-  local action="$2"
-  local environment="$3"
+  local action="${2:-validate}"
+  local environment="${3:-home}"
 
-  # Extract project name (e.g., "10-proxmox-Ubuntu-server-raw" from "10-proxmox-Ubuntu-server-raw/packer/")
+  # Check if action and environment are provided.
+  if [ -z "$action" ] || [ -z "$environment" ]; then
+    log_error "Missing required arguments: action and environment."
+    exit 1
+  fi
+
+  # Extract project name (e.g., "10-proxmox-ubuntu-server-raw" from "10-proxmox-ubuntu-server-raw/packer/").
   local project_name=$(echo "$project_dir" | cut -d'/' -f1)
-  # Use absolute path for log file.
-  local log_file="$LOGS_DIR/${project_name}.log"
 
-  # Debug: Print the log file name to verify
-  echo "Logging to: $log_file"
+  log_info "Running $project_dir with commands: [$action $environment]."
 
-  TIMEFORMAT='Build took %R seconds.'
-  time {
-    echo "Running $project_dir with commands: [$action $environment]" | tee "$log_file"
-    cd "../datacenter/02-packer/$project_dir"
+  navigate_to_dir "$HOME/git/datacenter/02-packer/$project_dir"
 
-      # Run pkr.sh and capture its output.
-      # stdbuf -o0 sed to disable buffering, ensuring real-time writes.
-      # sed '...' -> Remove ANSI escape codes from the output.
-      ./pkr.sh "$action" "$environment" 2>&1 | tee /dev/tty | stdbuf -o0 sed 's/\x1B\[[0-9;]*[JKmsu]//g' >> "$log_file" & packer_pid=$!
+  # Run pkr.sh and capture its output.
+  # stdbuf -o0 sed to disable buffering, ensuring real-time writes.
+  # sed '...' -> Remove ANSI escape codes from the output.
+  ./pkr.sh "$action" "$environment" 2>&1 | tee /dev/tty | stdbuf -o0 sed 's/\x1B\[[0-9;]*[JKmsu]//g' >> "$LOG_FILE" & packer_pid=$!
 
-      # Wait for the Packer process to complete.
-      wait $packer_pid
+  # Wait for the Packer process to complete.
+  wait $packer_pid
 
-    cd -
-    echo "Finished $project_dir" | tee -a "$log_file"
-  }
-
-  echo ""
+  return_to_previous_dir
 }
 
-function createTemplates() {
-  runningPackerBuild "10-proxmox-ubuntu-server-raw/packer/" "$1" "$2"
-  runningPackerBuild "11-proxmox-ubuntu-server-standard/packer/" "$1" "$2"
-  runningPackerBuild "12-proxmox-ubuntu-server-std-docker/packer/" "$1" "$2"
-  runningPackerBuild "20-proxmox-ubuntu-desktop-raw/packer/" "$1" "$2"
-  runningPackerBuild "21-proxmox-ubuntu-desktop-standard/packer/" "$1" "$2"
+create_templates() {
+  run_packer_build "10-proxmox-ubuntu-server-raw/packer/" "$1" "$2"
+  run_packer_build "11-proxmox-ubuntu-server-standard/packer/" "$1" "$2"
+  run_packer_build "12-proxmox-ubuntu-server-std-docker/packer/" "$1" "$2"
+  run_packer_build "20-proxmox-ubuntu-desktop-raw/packer/" "$1" "$2"
+  run_packer_build "21-proxmox-ubuntu-desktop-standard/packer/" "$1" "$2"
 }
 
-createTemplates "$1" "$2"
+measure_time "Template build" create_templates "$1" "$2"
+
+log_info "Template builds completed successfully."
