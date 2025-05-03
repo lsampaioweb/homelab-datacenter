@@ -22,9 +22,9 @@ update_git_repository() {
 
   navigate_to_dir "$dir/$repo"
 
+  git submodule update --init --recursive || { echo "Error: Submodule update failed"; return_to_previous_dir; return 1; }
   git pull --recurse-submodules || { echo "Error: Git pull failed"; return_to_previous_dir; return 1; }
   git submodule sync || { echo "Error: Submodule sync failed"; return_to_previous_dir; return 1; }
-  git submodule update --init --recursive || { echo "Error: Submodule update failed"; return_to_previous_dir; return 1; }
 
   # Check for new submodule commits.
   if git status --porcelain | grep -q .; then
