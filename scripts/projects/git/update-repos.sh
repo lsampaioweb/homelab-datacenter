@@ -35,8 +35,6 @@ update_git_repository() {
   fi
 
   return_to_previous_dir
-  log_info "Finished updating $repo at $dir."
-  echo -e "\n"
 }
 
 # Navigate to the git directory.
@@ -52,12 +50,12 @@ measure_time "Updating ansible-kvm-cloud-init" update_git_repository "$HOME/git/
 
 # Packer.
 measure_time "Updating 01-packer-proxmox-ubuntu-iso" update_git_repository "$HOME/git/datacenter/02-packer" "01-packer-proxmox-ubuntu-iso"
-measure_time "Updating 02-packer-proxmox-Ubuntu-clone" update_git_repository "$HOME/git/datacenter/02-packer" "02-packer-proxmox-Ubuntu-clone"
-measure_time "Updating 10-proxmox-ubuntu-server-raw" update_git_repository "$HOME/git/datacenter/02-packer" "10-proxmox-Ubuntu-server-raw"
-measure_time "Updating 11-proxmox-ubuntu-server-standard" update_git_repository "$HOME/git/datacenter/02-packer" "11-proxmox-Ubuntu-server-standard"
+measure_time "Updating 02-packer-proxmox-ubuntu-clone" update_git_repository "$HOME/git/datacenter/02-packer" "02-packer-proxmox-ubuntu-clone"
+measure_time "Updating 10-proxmox-ubuntu-server-raw" update_git_repository "$HOME/git/datacenter/02-packer" "10-proxmox-ubuntu-server-raw"
+measure_time "Updating 11-proxmox-ubuntu-server-standard" update_git_repository "$HOME/git/datacenter/02-packer" "11-proxmox-ubuntu-server-standard"
 measure_time "Updating 12-proxmox-ubuntu-server-std-docker" update_git_repository "$HOME/git/datacenter/02-packer" "12-proxmox-ubuntu-server-std-docker"
-measure_time "Updating 20-proxmox-ubuntu-desktop-raw" update_git_repository "$HOME/git/datacenter/02-packer" "20-proxmox-Ubuntu-desktop-raw"
-measure_time "Updating 21-proxmox-ubuntu-desktop-standard" update_git_repository "$HOME/git/datacenter/02-packer" "21-proxmox-Ubuntu-desktop-standard"
+measure_time "Updating 20-proxmox-ubuntu-desktop-raw" update_git_repository "$HOME/git/datacenter/02-packer" "20-proxmox-ubuntu-desktop-raw"
+measure_time "Updating 21-proxmox-ubuntu-desktop-standard" update_git_repository "$HOME/git/datacenter/02-packer" "21-proxmox-ubuntu-desktop-standard"
 
 # Terraform.
 measure_time "Updating 01-terraform-random-target-node" update_git_repository "$HOME/git/datacenter/03-terraform" "01-terraform-random-target-node"
