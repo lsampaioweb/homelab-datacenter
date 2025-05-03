@@ -22,16 +22,16 @@ update_git_repository() {
 
   navigate_to_dir "$dir/$repo"
 
-  git pull || { echo "Error: Git pull failed"; return_to_previous_dir; return 1; }
-  git submodule update --init --recursive || { echo "Error: Submodule update failed"; return_to_previous_dir; return 1; }
-  git submodule sync || { echo "Error: Submodule sync failed"; return_to_previous_dir; return 1; }
+  git pull || { log_error "Git pull failed"; return_to_previous_dir; return 1; }
+  git submodule update --init --recursive || { log_error "Submodule update failed"; return_to_previous_dir; return 1; }
+  git submodule sync || { log_error "Submodule sync failed"; return_to_previous_dir; return 1; }
 
   # Check for new submodule commits.
   if git status --porcelain | grep -q .; then
     log_info "New submodule commits detected, committing..."
     git add .
-    git commit -m "chore: Update submodule commits" --author "Bot<lsampaioweb+bot@gmail.com>" || { echo "Error: Commit failed"; return_to_previous_dir; return 1; }
-    git push origin main || { echo "Error: Push failed"; return_to_previous_dir; return 1; }
+    git commit -m "chore: Update submodule commits" --author "Bot<lsampaioweb+bot@gmail.com>" || { log_error "Commit failed"; return_to_previous_dir; return 1; }
+    git push origin main || { log_error "Push failed"; return_to_previous_dir; return 1; }
   fi
 
   return_to_previous_dir

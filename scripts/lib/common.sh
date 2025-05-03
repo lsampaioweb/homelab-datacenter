@@ -24,6 +24,11 @@ log_debug() {
   fi
 }
 
+# Log an error message.
+log_error() {
+  log_message "ERROR: $*"
+}
+
 # Measure execution time of a function.
 # Usage: measure_time "operation name" function_name [args...].
 measure_time() {
@@ -49,7 +54,7 @@ create_directory() {
     log_debug "Creating directory: $dir."
 
     if ! mkdir -p "$dir" 2>/dev/null; then
-      log_message "ERROR: Failed to create directory $dir."
+      log_error "Failed to create directory $dir."
       exit 1
     fi
   fi
@@ -59,7 +64,7 @@ create_directory() {
 navigate_to_dir() {
   local dir="$1"
   if ! pushd "$dir" >/dev/null 2>&1; then
-    log_message "ERROR: Directory $dir does not exist."
+    log_error "Directory $dir does not exist."
     exit 1
   fi
 }
