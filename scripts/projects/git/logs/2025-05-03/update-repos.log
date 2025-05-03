@@ -1,0 +1,8 @@
+2025-05-03 14:58:28 ERROR: Directory ~/git does not exist.
+2025-05-03 15:00:14 INFO: Updating  at .
+fatal: not a git repository (or any of the parent directories): .git
+Error: Git pull failed
+Updating homelab-datacenter took 0.004 seconds.
+2025-05-03 15:05:02 INFO: Updating homelab-datacenter at /home/lsampaio/git.
+Already up to date.
+2025-05-03 15:05:03 INFO: New submodule commits detected, committing...
