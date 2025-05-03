@@ -2,7 +2,7 @@
 set -e # Abort if there is an issue with any build.
 
 # Usage:
-#   ./templates.sh build home
+#   ./pkr.sh build home
 #   $1 -> validate, build.
 #   $2 -> home, homelab.
 
