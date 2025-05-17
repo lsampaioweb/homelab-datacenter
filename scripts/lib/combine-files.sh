@@ -5,7 +5,7 @@ START_DIR="."
 
 # Pattern used for excluding directories in your 'tree' command.
 # This should match the -I pattern you used with tree.
-IGNORE_PATTERN='ansible|tsm'
+IGNORE_PATTERN=''
 
 # The single file where all content will be saved
 OUTPUT_FILE="combined-files.txt"
