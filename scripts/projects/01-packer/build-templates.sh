@@ -8,7 +8,9 @@ set -e # Abort if there is an issue with any build.
 #   $2 -> home, homelab.
 
 # Source common functions and variables.
-. $(dirname "$0")/../../lib/common.sh
+. $(dirname "$0")/../../lib/log.sh
+. $(dirname "$0")/../../lib/directory.sh
+. $(dirname "$0")/../../lib/time.sh
 . $(dirname "$0")/vars/variables.sh
 
 # Variable to store the PID of the current Packer process.

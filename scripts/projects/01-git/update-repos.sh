@@ -5,7 +5,9 @@ set -e # Abort if there is an issue with any build.
 # ./update-repos.sh
 
 # Source common functions and variables.
-. $(dirname "$0")/../../lib/common.sh
+. $(dirname "$0")/../../lib/log.sh
+. $(dirname "$0")/../../lib/directory.sh
+. $(dirname "$0")/../../lib/time.sh
 . $(dirname "$0")/vars/variables.sh
 
 # Create logs directory with date if it doesn't exist.

@@ -1,7 +1,9 @@
 #!/bin/bash
 
 # Source shared functions.
-. $(dirname "$0")/../../lib/common.sh
+. $(dirname "$0")/../../lib/log.sh
+. $(dirname "$0")/../../lib/directory.sh
+. $(dirname "$0")/../../lib/time.sh
 
 # Run a Terraform operation (apply or destroy) on a project directory.
 # Usage: run_terraform_operation "operation" "project_dir" "environment".
