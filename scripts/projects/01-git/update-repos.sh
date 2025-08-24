@@ -21,7 +21,7 @@ exec 2>&1
 log_info "Starting Git repositories update process..."
 
 # Message with the path to the log file.
-log_info "You can find the full log in: $LOG_FILE."
+log_info "Full log in: $LOG_FILE."
 
 # Validate GIT_DIR exists
 if [[ ! -d "$GIT_DIR" ]]; then
