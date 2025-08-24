@@ -18,8 +18,10 @@ create_directory "$LOG_DIR"
 exec 1> >(tee -a "$LOG_FILE")
 exec 2>&1
 
-# Navigate to the git directory.
 log_info "Starting Git repositories update process..."
+
+# Message with the path to the log file.
+log_info "You can find the full log in: $LOG_FILE."
 
 # Validate GIT_DIR exists
 if [[ ! -d "$GIT_DIR" ]]; then
@@ -27,6 +29,7 @@ if [[ ! -d "$GIT_DIR" ]]; then
   exit 1
 fi
 
+# Navigate to the git directory.
 navigate_to_dir "$GIT_DIR"
 
 # Git repositories.
