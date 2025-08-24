@@ -84,7 +84,7 @@ commit_submodule_updates() {
       log_error "Failed to push submodule changes"
       return 1 
     }
-    log_success "Submodule updates committed and pushed successfully"
+    log_info "Submodule updates committed and pushed successfully"
   else
     log_info "No submodule changes detected"
   fi
@@ -123,9 +123,9 @@ update_git_repository() {
   return_to_previous_dir
   
   if [ $exit_code -eq 0 ]; then
-    log_success "Successfully updated $repo"
+    log_info "✅ Successfully updated $repo"
   else
-    log_error "Failed to update $repo"
+    log_error "❌ Failed to update $repo"
     return $exit_code
   fi
   
