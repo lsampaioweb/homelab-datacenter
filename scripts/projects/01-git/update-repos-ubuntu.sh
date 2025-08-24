@@ -2,13 +2,14 @@
 set -e # Abort if there is an issue with any build.
 
 # Usage:
-# ./update-repos.sh
+# ./update-repos-ubuntu.sh
 
 # Source common functions and variables.
-. $(dirname "$0")/../../lib/log.sh
-. $(dirname "$0")/../../lib/directory.sh
-. $(dirname "$0")/../../lib/time.sh
-. $(dirname "$0")/vars/variables.sh
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+. "$SCRIPT_DIR/../../lib/log.sh"
+. "$SCRIPT_DIR/../../lib/directory.sh"
+. "$SCRIPT_DIR/../../lib/time.sh"
+. "$SCRIPT_DIR/vars/variables.sh"
 
 # Create logs directory with date if it doesn't exist.
 create_directory "$LOG_DIR"
@@ -17,40 +18,137 @@ create_directory "$LOG_DIR"
 exec 1> >(tee -a "$LOG_FILE")
 exec 2>&1
 
+# Function to pull latest changes from main repository
+pull_main_repository() {
+  log_info "Pulling latest changes from main repository..."
+  git pull || { 
+    log_error "Git pull failed for main repository"
+    return 1 
+  }
+}
+
+# Function to initialize and sync submodules
+initialize_submodules() {
+  log_info "Initializing and syncing submodules..."
+  git submodule update --init --recursive || { 
+    log_error "Submodule initialization failed"
+    return 1 
+  }
+  git submodule sync --recursive || { 
+    log_error "Submodule sync failed"
+    return 1 
+  }
+}
+
+# Function to configure submodule branch tracking
+configure_submodule_tracking() {
+  log_info "Configuring submodule branch tracking..."
+  git submodule foreach '
+    if ! git config -f $toplevel/.gitmodules submodule.$name.branch >/dev/null 2>&1; then
+      echo "  → Configuring $name to track main branch..."
+      git config -f $toplevel/.gitmodules submodule.$name.branch main
+    fi
+  ' || { 
+    log_error "Failed to configure submodule branch tracking"
+    return 1 
+  }
+}
+
+# Function to update submodules to latest commits
+update_submodules_to_latest() {
+  log_info "Updating submodules to latest commits..."
+  git submodule foreach '
+    current_branch=$(git symbolic-ref --short HEAD 2>/dev/null || echo "detached")
+    if [ "$current_branch" != "main" ]; then
+      echo "  → Switching $name to main branch..."
+      git checkout main 2>/dev/null || git checkout -b main 2>/dev/null || true
+    fi
+    echo "  → Pulling latest changes for $name..."
+    git pull origin main 2>/dev/null || git pull 2>/dev/null || echo "  ⚠️  Warning: Could not pull latest changes for $name"
+  '
+}
+
+# Function to commit and push submodule updates
+commit_submodule_updates() {
+  if git status --porcelain | grep -q .; then
+    log_info "New submodule commits detected, committing and pushing..."
+    git add . || { 
+      log_error "Failed to stage submodule changes"
+      return 1 
+    }
+    git commit -m "chore: Update submodule commits" --author "$BOT_AUTHOR" || { 
+      log_error "Failed to commit submodule changes"
+      return 1 
+    }
+    git push origin main || { 
+      log_error "Failed to push submodule changes"
+      return 1 
+    }
+    log_success "Submodule updates committed and pushed successfully"
+  else
+    log_info "No submodule changes detected"
+  fi
+}
+
+# Main function to update a git repository
 update_git_repository() {
   local dir="$1"
   local repo="$2"
-  log_info "Updating $repo at $dir."
+  
+  log_info "Starting update for repository: $repo"
+  log_info "Location: $dir/$repo"
 
-  navigate_to_dir "$dir/$repo"
-
-  git pull || { log_error "Git pull failed"; return_to_previous_dir; return 1; }
-  git submodule update --init --recursive || { log_error "Submodule update failed"; return_to_previous_dir; return 1; }
-  git submodule sync || { log_error "Submodule sync failed"; return_to_previous_dir; return 1; }
-
-  # Check for new submodule commits.
-  if git status --porcelain | grep -q .; then
-    log_info "New submodule commits detected, committing..."
-    git add .
-    git commit -m "chore: Update submodule commits" --author "Bot<lsampaioweb+bot@gmail.com>" || { log_error "Commit failed"; return_to_previous_dir; return 1; }
-    git push origin main || { log_error "Push failed"; return_to_previous_dir; return 1; }
+  # Validate directory exists
+  if [[ ! -d "$dir/$repo" ]]; then
+    log_error "Directory $dir/$repo does not exist"
+    return 1
   fi
 
+  # Navigate to repository
+  navigate_to_dir "$dir/$repo" || {
+    log_error "Failed to navigate to $dir/$repo"
+    return 1
+  }
+
+  # Execute update sequence
+  pull_main_repository && \
+  initialize_submodules && \
+  configure_submodule_tracking && \
+  update_submodules_to_latest && \
+  commit_submodule_updates
+
+  local exit_code=$?
+  
+  # Return to previous directory
   return_to_previous_dir
+  
+  if [ $exit_code -eq 0 ]; then
+    log_success "Successfully updated $repo"
+  else
+    log_error "Failed to update $repo"
+    return $exit_code
+  fi
+  
+  echo "" # Add spacing between repositories
 }
 
-# Navigate to the git directory.
+# Navigate to the git directory
+log_info "Starting Git repositories update process..."
 navigate_to_dir "$HOME/git"
 
-# Git.
+# Navigate to the git directory
+log_info "Starting Git repositories update process..."
+navigate_to_dir "$HOME/git"
+
+# Git repositories
 measure_time "Updating homelab-datacenter" update_git_repository "$HOME/git" "homelab-datacenter"
 measure_time "Updating git-template-repository" update_git_repository "$HOME/git" "git-template-repository"
 
-# Ansible.
+# Ansible repositories
 measure_time "Updating ansible-common-tasks" update_git_repository "$HOME/git/datacenter/01-ansible" "ansible-common-tasks"
 measure_time "Updating ansible-kvm-cloud-init" update_git_repository "$HOME/git/datacenter/01-ansible" "ansible-kvm-cloud-init"
 
-# Packer.
+# Packer repositories
 measure_time "Updating 01-packer-proxmox-ubuntu-iso" update_git_repository "$HOME/git/datacenter/02-packer" "01-packer-proxmox-ubuntu-iso"
 measure_time "Updating 02-packer-proxmox-ubuntu-clone" update_git_repository "$HOME/git/datacenter/02-packer" "02-packer-proxmox-ubuntu-clone"
 measure_time "Updating 10-proxmox-ubuntu-server-raw" update_git_repository "$HOME/git/datacenter/02-packer" "10-proxmox-ubuntu-server-raw"
@@ -59,19 +157,19 @@ measure_time "Updating 12-proxmox-ubuntu-server-std-docker" update_git_repositor
 measure_time "Updating 20-proxmox-ubuntu-desktop-raw" update_git_repository "$HOME/git/datacenter/02-packer" "20-proxmox-ubuntu-desktop-raw"
 measure_time "Updating 21-proxmox-ubuntu-desktop-standard" update_git_repository "$HOME/git/datacenter/02-packer" "21-proxmox-ubuntu-desktop-standard"
 
-# Terraform.
+# Terraform repositories
 measure_time "Updating 01-terraform-random-target-node" update_git_repository "$HOME/git/datacenter/03-terraform" "01-terraform-random-target-node"
 measure_time "Updating 02-terraform-local-dynamic-inventory" update_git_repository "$HOME/git/datacenter/03-terraform" "02-terraform-local-dynamic-inventory"
 measure_time "Updating 03-terraform-proxmox-vm-qemu" update_git_repository "$HOME/git/datacenter/03-terraform" "03-terraform-proxmox-vm-qemu"
 measure_time "Updating 04-terraform-proxmox-homelab-project" update_git_repository "$HOME/git/datacenter/03-terraform" "04-terraform-proxmox-homelab-project"
 
-# Docker.
+# Docker repositories
 measure_time "Updating custom-docker-images" update_git_repository "$HOME/git/datacenter/04-docker" "custom-docker-images"
 
-# Spring Boot.
+# Spring Boot repositories
 measure_time "Updating spring-boot-tutorial" update_git_repository "$HOME/git/datacenter/05-spring-boot" "spring-boot-tutorial"
 
-# Projects.
+# Project repositories
 measure_time "Updating 01-working-machine" update_git_repository "$HOME/git/datacenter/06-projects" "01-working-machine"
 measure_time "Updating 02-openssl-certificates" update_git_repository "$HOME/git/datacenter/06-projects" "02-openssl-certificates"
 measure_time "Updating 03-proxmox-cluster" update_git_repository "$HOME/git/datacenter/06-projects" "03-proxmox-cluster"
@@ -96,7 +194,7 @@ measure_time "Updating xx-T1600G-28TS-SG2424" update_git_repository "$HOME/git/d
 measure_time "Updating xx-tplink_router_ax1800" update_git_repository "$HOME/git/datacenter/06-projects" "xx-tplink_router_ax1800"
 measure_time "Updating xx-vault" update_git_repository "$HOME/git/datacenter/06-projects" "xx-vault"
 
-# Home.
+# Home repositories
 measure_time "Updating 01-backup-restic-s3-minio" update_git_repository "$HOME/git/home" "01-backup-restic-s3-minio"
 measure_time "Updating 02-home-edge-esxi" update_git_repository "$HOME/git/home" "02-home-edge-esxi"
 measure_time "Updating 03-home-edge-firewall" update_git_repository "$HOME/git/home" "03-home-edge-firewall"
@@ -106,7 +204,7 @@ measure_time "Updating 06-home-edge-zabbix" update_git_repository "$HOME/git/hom
 measure_time "Updating 07-home-edge-grafana" update_git_repository "$HOME/git/home" "07-home-edge-grafana"
 measure_time "Updating 08-home-edge-k3s" update_git_repository "$HOME/git/home" "08-home-edge-k3s"
 
-# Return to the original directory.
+# Return to the original directory
 return_to_previous_dir
 
 log_info "Git repository updates completed successfully."

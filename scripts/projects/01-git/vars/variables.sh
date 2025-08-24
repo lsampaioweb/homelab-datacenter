@@ -5,6 +5,9 @@
 
 # Variables specific to project.
 
+# Bot author for automated commits
+BOT_AUTHOR="Bot<lsampaioweb+bot@gmail.com>"
+
 # logs/<date>/update-repos.log.
 LOG_FILE="$LOGS_DIR/$(date +%Y-%m-%d)/update-repos.log"
 
