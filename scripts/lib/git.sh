@@ -1,5 +1,22 @@
 #!/bin/bash
 
+# Git Operations Library
+# 
+# This library provides reusable functions for Git repository management,
+# including submodule handling, branch tracking, and automated updates.
+#
+# Functions:
+#   - pull_main_repository(): Pull latest changes from main repository
+#   - initialize_submodules(): Initialize and sync all submodules
+#   - configure_submodule_tracking(): Configure submodules to track main branch
+#   - update_submodules_to_latest(): Update submodules to latest commits
+#   - commit_submodule_updates(): Commit and push submodule reference updates
+#   - update_git_repository(): Main orchestrator function for full repository update
+#
+# Dependencies: log.sh, directory.sh
+# Author: Luciano Sampaio
+# Version: 2.0
+
 # Function to pull latest changes from main repository.
 pull_main_repository() {
   log_info "Pulling latest changes from main repository..."

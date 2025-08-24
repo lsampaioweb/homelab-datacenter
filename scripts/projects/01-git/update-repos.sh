@@ -5,11 +5,11 @@ set -e # Abort if there is an issue with any build.
 # ./update-repos-ubuntu.sh
 
 # Source common functions and variables.
-. "$SCRIPT_DIR/../../lib/log.sh"
-. "$SCRIPT_DIR/../../lib/directory.sh"
-. "$SCRIPT_DIR/../../lib/time.sh"
-. "$SCRIPT_DIR/../../lib/git.sh"
-. "$SCRIPT_DIR/vars/variables.sh"
+. "$SCRIPT_DIR/../../lib/log.sh" || { echo "Error: Cannot source log.sh"; exit 1; }
+. "$SCRIPT_DIR/../../lib/directory.sh" || { echo "Error: Cannot source directory.sh"; exit 1; }
+. "$SCRIPT_DIR/../../lib/time.sh" || { echo "Error: Cannot source time.sh"; exit 1; }
+. "$SCRIPT_DIR/../../lib/git.sh" || { echo "Error: Cannot source git.sh"; exit 1; }
+. "$SCRIPT_DIR/vars/variables.sh" || { echo "Error: Cannot source variables.sh"; exit 1; }
 
 # Create logs directory with date if it doesn't exist.
 create_directory "$LOG_DIR"
@@ -20,6 +20,13 @@ exec 2>&1
 
 # Navigate to the git directory.
 log_info "Starting Git repositories update process..."
+
+# Validate GIT_DIR exists
+if [[ ! -d "$GIT_DIR" ]]; then
+  log_error "Git directory does not exist: $GIT_DIR"
+  exit 1
+fi
+
 navigate_to_dir "$GIT_DIR"
 
 # Git repositories.
