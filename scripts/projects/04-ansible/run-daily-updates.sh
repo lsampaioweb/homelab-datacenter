@@ -37,7 +37,7 @@ run_jumpserver_daily_updates() {
   log_info "Running JumpServer updates."
 
   navigate_to_dir "$HOME/git/datacenter/06-projects/01-working-machine/ansible"
-  ansible-playbook update.yml
+  ansible-playbook update.yml -e "inventory_hosts=desktop"
   return_to_previous_dir
 }
 
