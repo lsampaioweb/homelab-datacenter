@@ -88,9 +88,14 @@ Change to the Git scripts directory.
 cd ~/git/homelab-datacenter/scripts/projects/01-git
 ```
 
-Run the repository update script.
+Run the repository update script on a MacBook.
 ```bash
-./update-repos.sh
+./update-repos-macos.sh
+```
+
+Run the repository update script on a Ubuntu.
+```bash
+./update-repos-ubuntu.sh
 ```
 
 **What It Does**:
@@ -295,9 +300,9 @@ Run the daily updates script.
 ```
 
 **What It Does**:
-  - Updates the jump server (`01-working-machine`).
   - Verifies OpenSSL certificates (`02-openssl-certificates`).
   - Updates the Proxmox cluster (`03-proxmox-cluster`).
+  - Updates the jump server (`01-working-machine`).
   - Logs to `logs/YYYY-MM-DD/daily-updates.log`.
 
 **Tip**:
