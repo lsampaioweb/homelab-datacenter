@@ -117,7 +117,8 @@ cd ~/git/homelab-datacenter/scripts/projects/02-packer
 
 Run the template build script with action and environment.
 ```bash
-./build-templates.sh [validate|build] [home|homelab]
+# ./build-templates.sh [validate|build] [home|homelab]
+./build-templates.sh build home
 ```
 
 **Options**:
