@@ -41,8 +41,8 @@ run_jumpserver_daily_updates() {
   return_to_previous_dir
 }
 
-measure_time "OpenSSL certificate updates" run_openssl_daily_updates
-measure_time "Proxmox cluster updates" run_proxmox_cluster_daily_updates
+# measure_time "OpenSSL certificate updates" run_openssl_daily_updates
+# measure_time "Proxmox cluster updates" run_proxmox_cluster_daily_updates
 measure_time "JumpServer updates" run_jumpserver_daily_updates
 
 log_info "Daily updates completed successfully."
