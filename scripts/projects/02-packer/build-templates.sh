@@ -51,14 +51,14 @@ run_packer_build() {
   # Extract project name (e.g., "10-proxmox-ubuntu-server-raw" from "10-proxmox-ubuntu-server-raw/packer/").
   local project_name=$(echo "$project_dir" | cut -d'/' -f1)
 
-  log_info "Running $project_dir with commands: [$action $environment]."
+  log_info "Running $project_name with commands: [$action $environment]."
 
   navigate_to_dir "$HOME/git/datacenter/02-packer/$project_dir"
 
   # Run pkr.sh and capture its output.
   # stdbuf -o0 sed to disable buffering, ensuring real-time writes.
   # sed '...' -> Remove ANSI escape codes from the output.
-  ./pkr.sh "$action" "$environment" 2>&1 | tee /dev/tty | stdbuf -o0 sed 's/\x1B\[[0-9;]*[JKmsu]//g' >> "$LOG_FILE" & packer_pid=$!
+  ./pkr.sh "$action" "$environment" 2>&1 | tee /dev/tty | stdbuf -o0 sed 's/\x1B\[[0-9;]*[JKmsu]//g' & packer_pid=$!
 
   # Wait for the Packer process to complete.
   wait $packer_pid
