@@ -19,9 +19,8 @@ packer_pid=""
 # Create logs directory with date if it doesn't exist.
 create_directory "$LOG_DIR"
 
-# Redirect output to both console and log file.
-exec 1> >(tee -a "$LOG_FILE")
-exec 2>&1
+# Resolve LOG_FILE to absolute path before any directory navigation.
+LOG_FILE_ABSOLUTE=$(realpath "$LOG_FILE")
 
 # Function to handle SIGINT (Ctrl+C).
 cleanup() {
@@ -53,12 +52,12 @@ run_packer_build() {
 
   log_info "Running $project_name with commands: [$action $environment]."
 
-  navigate_to_dir "$HOME/git/datacenter/02-packer/$project_dir"
+  navigate_to_dir "$PACKER_PROJECTS_PATH/$project_dir"
 
   # Run pkr.sh and capture its output.
-  # stdbuf -o0 sed to disable buffering, ensuring real-time writes.
+  # tee /dev/tty to display on console, stdbuf -o0 sed to disable buffering, ensuring real-time writes.
   # sed '...' -> Remove ANSI escape codes from the output.
-  ./pkr.sh "$action" "$environment" 2>&1 | tee /dev/tty | stdbuf -o0 sed 's/\x1B\[[0-9;]*[JKmsu]//g' & packer_pid=$!
+  ./pkr.sh "$action" "$environment" 2>&1 | tee /dev/tty | stdbuf -o0 sed 's/\x1B\[[0-9;]*[JKmsu]//g' >> "$LOG_FILE_ABSOLUTE" & packer_pid=$!
 
   # Wait for the Packer process to complete.
   wait $packer_pid
