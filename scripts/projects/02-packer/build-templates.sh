@@ -16,11 +16,8 @@ set -e # Abort if there is an issue with any build.
 # Variable to store the PID of the current Packer process.
 packer_pid=""
 
-# Create logs directory with date if it doesn't exist.
-create_directory "$LOG_DIR"
-
-# Resolve LOG_FILE to absolute path before any directory navigation.
-LOG_FILE_ABSOLUTE=$(realpath "$LOG_FILE")
+# Resolve LOGS_DIR to absolute path before any directory navigation.
+LOGS_DIR_ABSOLUTE=$(realpath "$LOGS_DIR")
 
 # Function to handle SIGINT (Ctrl+C).
 cleanup() {
@@ -50,25 +47,40 @@ run_packer_build() {
   # Extract project name (e.g., "10-proxmox-ubuntu-server-raw" from "10-proxmox-ubuntu-server-raw/packer/").
   local project_name=$(echo "$project_dir" | cut -d'/' -f1)
 
-  log_info "Running $project_name with commands: [$action $environment]."
+  # Log the start of the build process.
+  log_info "Running $action for $project_name on $environment."
 
+  # logs/<date>/<project_name>.log
+  LOG_FILE="$LOGS_DIR_ABSOLUTE/$(date +%Y-%m-%d)/${project_name}.log"
+
+  # Extract only the directory part.
+  LOG_DIR=$(dirname "$LOG_FILE")
+
+  # Create log directory if it doesn't exist.
+  create_directory "$LOG_DIR"
+
+  # Navigate to the Packer project directory.
   navigate_to_dir "$PACKER_PROJECTS_PATH/$project_dir"
 
   # Run pkr.sh and capture its output.
   # tee /dev/tty to display on console, stdbuf -o0 sed to disable buffering, ensuring real-time writes.
   # sed '...' -> Remove ANSI escape codes from the output.
-  ./pkr.sh "$action" "$environment" 2>&1 | tee /dev/tty | stdbuf -o0 sed 's/\x1B\[[0-9;]*[JKmsu]//g' >> "$LOG_FILE_ABSOLUTE" & packer_pid=$!
+  ./pkr.sh "$action" "$environment" 2>&1 | tee /dev/tty | stdbuf -o0 sed 's/\x1B\[[0-9;]*[JKmsu]//g' > "$LOG_FILE" & packer_pid=$!
 
   # Wait for the Packer process to complete.
   wait $packer_pid
 
+  # Log completion message.
+  log_info "Packer $action for $project_name completed. Log saved to $LOG_FILE."
+
+  # Return to the previous directory.
   return_to_previous_dir
 }
 
 create_templates() {
-  run_packer_build "10-proxmox-ubuntu-server-raw/packer/" "$1" "$2"
-  run_packer_build "11-proxmox-ubuntu-server-standard/packer/" "$1" "$2"
-  run_packer_build "12-proxmox-ubuntu-server-std-docker/packer/" "$1" "$2"
+  # run_packer_build "10-proxmox-ubuntu-server-raw/packer/" "$1" "$2"
+  # run_packer_build "11-proxmox-ubuntu-server-standard/packer/" "$1" "$2"
+  # run_packer_build "12-proxmox-ubuntu-server-std-docker/packer/" "$1" "$2"
   run_packer_build "20-proxmox-ubuntu-desktop-raw/packer/" "$1" "$2"
   run_packer_build "21-proxmox-ubuntu-desktop-standard/packer/" "$1" "$2"
 }
