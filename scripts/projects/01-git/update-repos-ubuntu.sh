@@ -8,7 +8,7 @@ set -e # Abort if there is an issue with any build.
 SCRIPT_DIR=$(dirname "$0")
 
 # Git directory.
-GIT_DIR="$HOME/Luciano/git"
+GIT_DIR="$HOME/git/lsampaioweb"
 
 # Include the script that will update all repositories.
 . "$SCRIPT_DIR/update-repos.sh"

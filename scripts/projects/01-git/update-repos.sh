@@ -56,8 +56,8 @@ measure_time "Updating 02-terraform-local-dynamic-inventory" update_git_reposito
 measure_time "Updating 03-terraform-proxmox-vm-qemu" update_git_repository "$GIT_DIR/datacenter/03-terraform" "03-terraform-proxmox-vm-qemu"
 measure_time "Updating 04-terraform-proxmox-homelab-project" update_git_repository "$GIT_DIR/datacenter/03-terraform" "04-terraform-proxmox-homelab-project"
 
-# Docker repositories.
-measure_time "Updating custom-docker-images" update_git_repository "$GIT_DIR/datacenter/04-docker" "custom-docker-images"
+# Container repositories.
+measure_time "Updating custom-container-images" update_git_repository "$GIT_DIR/datacenter/04-docker" "custom-container-images"
 
 # Spring Boot repositories.
 measure_time "Updating spring-boot-tutorial" update_git_repository "$GIT_DIR/datacenter/05-spring-boot" "spring-boot-tutorial"
@@ -65,14 +65,15 @@ measure_time "Updating spring-boot-tutorial" update_git_repository "$GIT_DIR/dat
 # Project repositories.
 measure_time "Updating 01-working-machine" update_git_repository "$GIT_DIR/datacenter/06-projects" "01-working-machine"
 measure_time "Updating 02-openssl-certificates" update_git_repository "$GIT_DIR/datacenter/06-projects" "02-openssl-certificates"
-measure_time "Updating 03-proxmox-cluster" update_git_repository "$GIT_DIR/datacenter/06-projects" "03-proxmox-cluster"
+# measure_time "Updating 03-proxmox-cluster" update_git_repository "$GIT_DIR/datacenter/06-projects" "03-proxmox-cluster"
 measure_time "Updating 04-load-balancer" update_git_repository "$GIT_DIR/datacenter/06-projects" "04-load-balancer"
 measure_time "Updating 05-backup-manager" update_git_repository "$GIT_DIR/datacenter/06-projects" "05-backup-manager"
 measure_time "Updating 06-dhcp" update_git_repository "$GIT_DIR/datacenter/06-projects" "06-dhcp"
 measure_time "Updating 07-dns" update_git_repository "$GIT_DIR/datacenter/06-projects" "07-dns"
 measure_time "Updating 08-ntp" update_git_repository "$GIT_DIR/datacenter/06-projects" "08-ntp"
-measure_time "Updating 09-bitcoin-puzzle" update_git_repository "$GIT_DIR/datacenter/06-projects" "09-bitcoin-puzzle"
 measure_time "Updating 10-vault-chromium-extension" update_git_repository "$GIT_DIR/datacenter/06-projects" "10-vault-chromium-extension"
+# measure_time "Updating 11-ia-instructions" update_git_repository "$GIT_DIR/datacenter/06-projects" "11-ia-instructions"
+measure_time "Updating 12-telegram" update_git_repository "$GIT_DIR/datacenter/06-projects" "12-telegram"
 measure_time "Updating xx-gitea" update_git_repository "$GIT_DIR/datacenter/06-projects" "xx-gitea"
 measure_time "Updating xx-jenkins" update_git_repository "$GIT_DIR/datacenter/06-projects" "xx-jenkins"
 measure_time "Updating xx-jenkins-shared-pipeline-libraries" update_git_repository "$GIT_DIR/datacenter/06-projects" "xx-jenkins-shared-pipeline-libraries"
@@ -86,6 +87,11 @@ measure_time "Updating xx-sonarqube" update_git_repository "$GIT_DIR/datacenter/
 measure_time "Updating xx-T1600G-28TS-SG2424" update_git_repository "$GIT_DIR/datacenter/06-projects" "xx-T1600G-28TS-SG2424"
 measure_time "Updating xx-tplink_router_ax1800" update_git_repository "$GIT_DIR/datacenter/06-projects" "xx-tplink_router_ax1800"
 measure_time "Updating xx-vault" update_git_repository "$GIT_DIR/datacenter/06-projects" "xx-vault"
+
+# Crypto repositories.
+measure_time "Updating 01-bitcoin-puzzle" update_git_repository "$GIT_DIR/datacenter/07-crypto" "01-bitcoin-puzzle"
+measure_time "Updating 02-bitcoin-puzzle-manager" update_git_repository "$GIT_DIR/datacenter/07-crypto" "02-bitcoin-puzzle-manager"
+measure_time "Updating 03-bitcoin-puzzle-worker" update_git_repository "$GIT_DIR/datacenter/07-crypto" "03-bitcoin-puzzle-worker"
 
 # Home repositories.
 measure_time "Updating 01-backup-restic-s3-minio" update_git_repository "$GIT_DIR/home" "01-backup-restic-s3-minio"
