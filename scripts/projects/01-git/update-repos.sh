@@ -89,9 +89,9 @@ measure_time "Updating xx-tplink_router_ax1800" update_git_repository "$GIT_DIR/
 measure_time "Updating xx-vault" update_git_repository "$GIT_DIR/datacenter/06-projects" "xx-vault"
 
 # Crypto repositories.
-measure_time "Updating 01-bitcoin-puzzle" update_git_repository "$GIT_DIR/datacenter/07-crypto" "01-bitcoin-puzzle"
 measure_time "Updating 02-bitcoin-puzzle-manager" update_git_repository "$GIT_DIR/datacenter/07-crypto" "02-bitcoin-puzzle-manager"
 measure_time "Updating 03-bitcoin-puzzle-worker" update_git_repository "$GIT_DIR/datacenter/07-crypto" "03-bitcoin-puzzle-worker"
+measure_time "Updating 01-bitcoin-puzzle" update_git_repository "$GIT_DIR/datacenter/07-crypto" "01-bitcoin-puzzle"
 
 # Home repositories.
 measure_time "Updating 01-backup-restic-s3-minio" update_git_repository "$GIT_DIR/home" "01-backup-restic-s3-minio"
