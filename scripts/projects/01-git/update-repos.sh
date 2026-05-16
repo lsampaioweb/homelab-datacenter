@@ -34,7 +34,7 @@ navigate_to_dir "$GIT_DIR"
 
 # Git repositories.
 measure_time "Updating homelab-datacenter" update_git_repository "$GIT_DIR" "homelab-datacenter"
-measure_time "Updating git-template-repository" update_git_repository "$GIT_DIR" "git-template-repository"
+# measure_time "Updating git-template-repository" update_git_repository "$GIT_DIR" "git-template-repository"
 measure_time "Updating TCM_Plugin" update_git_repository "$GIT_DIR" "TCM_Plugin"
 
 # Ansible repositories.
