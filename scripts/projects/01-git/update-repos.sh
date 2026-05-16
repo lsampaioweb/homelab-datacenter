@@ -72,7 +72,7 @@ measure_time "Updating 06-dhcp" update_git_repository "$GIT_DIR/datacenter/06-pr
 measure_time "Updating 07-dns" update_git_repository "$GIT_DIR/datacenter/06-projects" "07-dns"
 measure_time "Updating 08-ntp" update_git_repository "$GIT_DIR/datacenter/06-projects" "08-ntp"
 measure_time "Updating 10-vault-chromium-extension" update_git_repository "$GIT_DIR/datacenter/06-projects" "10-vault-chromium-extension"
-# measure_time "Updating 11-ia-instructions" update_git_repository "$GIT_DIR/datacenter/06-projects" "11-ia-instructions"
+measure_time "Updating 11-ia-instructions" update_git_repository "$GIT_DIR/datacenter/06-projects" "11-ia-instructions"
 measure_time "Updating 12-telegram" update_git_repository "$GIT_DIR/datacenter/06-projects" "12-telegram"
 measure_time "Updating xx-gitea" update_git_repository "$GIT_DIR/datacenter/06-projects" "xx-gitea"
 measure_time "Updating xx-jenkins" update_git_repository "$GIT_DIR/datacenter/06-projects" "xx-jenkins"
