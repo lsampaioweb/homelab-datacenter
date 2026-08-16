@@ -103,9 +103,6 @@ measure_time "Updating 06-home-edge-zabbix" update_git_repository "$GIT_DIR/home
 measure_time "Updating 07-home-edge-grafana" update_git_repository "$GIT_DIR/home" "07-home-edge-grafana"
 measure_time "Updating 08-home-edge-k3s" update_git_repository "$GIT_DIR/home" "08-home-edge-k3s"
 
-# Old repositories.
-measure_time "Updating TrueNAS" update_git_repository "$GIT_DIR/old" "TrueNAS"
-
 # Return to the original directory.
 return_to_previous_dir
 
