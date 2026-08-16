@@ -85,7 +85,7 @@ Updates all 50+ Git repositories and their submodules to the latest commits, com
 
 Change to the Git scripts directory.
 ```bash
-cd ~/git/homelab-datacenter/scripts/projects/01-git
+cd ~/git/lsampaioweb/homelab-datacenter/scripts/projects/01-git
 ```
 
 Run the repository update script on a MacBook.
