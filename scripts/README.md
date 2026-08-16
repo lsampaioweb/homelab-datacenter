@@ -112,7 +112,7 @@ Builds Ubuntu 24.04 VM templates in `Proxmox` using `Packer` for server and desk
 
 Change to the Packer scripts directory.
 ```bash
-cd ~/git/homelab-datacenter/scripts/projects/02-packer
+cd ~/git/lsampaioweb/homelab-datacenter/scripts/projects/02-packer
 ```
 
 Run the template build script with action and environment.
@@ -160,7 +160,7 @@ Removes specific VM templates from Proxmox nodes to clean up.
 
 Change to the Packer scripts directory.
 ```bash
-cd ~/git/homelab-datacenter/scripts/projects/02-packer
+cd ~/git/lsampaioweb/homelab-datacenter/scripts/projects/02-packer
 ```
 
 Run the template destroy script.
@@ -184,7 +184,7 @@ Deploys VMs for infrastructure projects (e.g., load balancer, DHCP) using Terraf
 
 Change to the Terraform scripts directory.
 ```bash
-cd ~/git/homelab-datacenter/scripts/projects/03-terraform
+cd ~/git/lsampaioweb/homelab-datacenter/scripts/projects/03-terraform
 ```
 
 Run the infrastructure deploy script with environment.
@@ -216,7 +216,7 @@ Removes VMs deployed by Terraform to clean up infrastructure.
 
 Change to the Terraform scripts directory.
 ```bash
-cd ~/git/homelab-datacenter/scripts/projects/03-terraform
+cd ~/git/lsampaioweb/homelab-datacenter/scripts/projects/03-terraform
 ```
 
 Run the infrastructure destroy script with environment.
@@ -246,9 +246,8 @@ Starts specific VM templates in Proxmox.
 
 **Usage**:
 
-Change to the Terraform scripts directory.
 ```bash
-cd ~/git/homelab-datacenter/scripts/projects/03-terraform
+cd ~/git/lsampaioweb/homelab-datacenter/scripts/projects/03-terraform
 ```
 
 Run the VM start script.
@@ -270,7 +269,7 @@ Shuts down specific VM templates in Proxmox.
 
 Change to the Terraform scripts directory.
 ```bash
-cd ~/git/homelab-datacenter/scripts/projects/03-terraform
+cd ~/git/lsampaioweb/homelab-datacenter/scripts/projects/03-terraform
 ```
 
 Run the VM shutdown script.
@@ -292,7 +291,7 @@ Runs Ansible playbooks for daily maintenance tasks on specific VMs.
 
 Change to the Ansible scripts directory.
 ```bash
-cd ~/git/homelab-datacenter/scripts/projects/04-ansible
+cd ~/git/lsampaioweb/homelab-datacenter/scripts/projects/04-ansible
 ```
 
 Run the daily updates script.
